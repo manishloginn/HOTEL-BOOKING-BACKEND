@@ -7,7 +7,9 @@ const PORT = process.env.PORT
 const MODE=process.env.NODE_ENV || "production"
 
 
-
+app.get("/home", (req, res) => {
+    req.setEncoding('ok')
+})
 
 
 
