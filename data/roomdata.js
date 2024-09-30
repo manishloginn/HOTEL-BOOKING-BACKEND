@@ -722,7 +722,7 @@ const roomdata = [
     "capacity": 5,
     "amenities": ["Free Wi-Fi", "Refrigerator", "Dining Table"]
   }
-  
+
 ]
 
 

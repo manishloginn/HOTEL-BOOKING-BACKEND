@@ -1,1120 +1,291 @@
 const hoteldata = [
     {
-        "name": "Novotel",
-        "location": "Pune",
-        "description": "A modern hotel with comfortable accommodations.",
-        "amenities": ["Free Wi-Fi", "Pool", "Gym"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Novotel+1",
-            "https://dummyimage.com/600x400/000/fff&text=Novotel+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Standard Room",
-                "price": 7500,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Superior Room",
-                "price": 9500,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Tea/Coffee Maker"]
-            },
-            {
-                "roomtype": "Executive Suite",
-                "price": 18000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Living Room", "Dining Area"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 12000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Refrigerator", "Air Conditioning"]
-            }
-        ],
-        "createdAt": "2022-01-11"
+      "name": "The Grand Palace",
+      "location": "New Delhi, India",
+      "describtion": "A luxurious hotel in the heart of the city.",
+      "amenities": ["Free Wi-Fi", "Swimming Pool", "Spa"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=The+Grand+Palace+1",
+        "https://dummyimage.com/600x400/000/fff&text=The+Grand+Palace+2"
+      ],
+      "createdAt": "2023-07-12T10:00:00Z"
     },
     {
-        "name": "Four Seasons",
-        "location": "Mumbai",
-        "description": "A luxurious hotel with stunning views and exceptional service.",
-        "amenities": ["Free Wi-Fi", "Spa", "Pool"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Four+Seasons+1",
-            "https://dummyimage.com/600x400/000/fff&text=Four+Seasons+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Deluxe Room",
-                "price": 16000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Tea/Coffee Maker"]
-            },
-            {
-                "roomtype": "Luxury Suite",
-                "price": 40000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Jacuzzi", "Living Room"]
-            },
-            {
-                "roomtype": "Executive Room",
-                "price": 20000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Air Conditioning", "Balcony"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 25000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Refrigerator", "Dining Area"]
-            }
-        ],
-        "createdAt": "2022-01-12"
+      "name": "Sea Breeze Resort",
+      "location": "Goa, India",
+      "describtion": "A beachside resort with stunning ocean views.",
+      "amenities": ["Beach Access", "Water Sports", "Bar"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Sea+Breeze+Resort+1",
+        "https://dummyimage.com/600x400/000/fff&text=Sea+Breeze+Resort+2"
+      ],
+      "createdAt": "2023-08-05T09:00:00Z"
     },
     {
-        "name": "JW Marriott",
-        "location": "Mumbai",
-        "description": "A lavish hotel offering top-notch amenities and services.",
-        "amenities": ["Free Wi-Fi", "Restaurants", "Spa"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=JW+Marriott+1",
-            "https://dummyimage.com/600x400/000/fff&text=JW+Marriott+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Deluxe Room",
-                "price": 12000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Club Room",
-                "price": 20000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Access to Club Lounge", "Living Room"]
-            },
-            {
-                "roomtype": "Executive Suite",
-                "price": 30000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Jacuzzi", "Dining Area"]
-            },
-            {
-                "roomtype": "Presidential Suite",
-                "price": 50000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Private Pool", "Dining Room"]
-            }
-        ],
-        "createdAt": "2022-01-13"
+      "name": "Mountain View Lodge",
+      "location": "Manali, India",
+      "describtion": "A cozy lodge with breathtaking mountain views.",
+      "amenities": ["Hiking", "Fireplace", "Restaurant"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Mountain+View+Lodge+1",
+        "https://dummyimage.com/600x400/000/fff&text=Mountain+View+Lodge+2"
+      ],
+      "createdAt": "2023-06-15T15:00:00Z"
     },
     {
-        "name": "Renaissance",
-        "location": "Mumbai",
-        "description": "A contemporary hotel with stylish accommodations and facilities.",
-        "amenities": ["Free Wi-Fi", "Pool", "Gym"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Renaissance+1",
-            "https://dummyimage.com/600x400/000/fff&text=Renaissance+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Standard Room",
-                "price": 9500,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Deluxe Room",
-                "price": 14000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Tea/Coffee Maker"]
-            },
-            {
-                "roomtype": "Business Class Room",
-                "price": 16000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Desk", "Refrigerator"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 22000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Dining Area", "Air Conditioning"]
-            }
-        ],
-        "createdAt": "2022-01-14"
+      "name": "Royal Heritage Hotel",
+      "location": "Agra, India",
+      "describtion": "Experience the luxury of royal hospitality.",
+      "amenities": ["Free Wi-Fi", "Fine Dining", "Spa"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Royal+Heritage+Hotel+1",
+        "https://dummyimage.com/600x400/000/fff&text=Royal+Heritage+Hotel+2"
+      ],
+      "createdAt": "2023-09-01T12:00:00Z"
     },
     {
-        "name": "The Westin",
-        "location": "Gurugram",
-        "description": "A wellness-focused hotel with rejuvenating facilities.",
-        "amenities": ["Spa", "Pool", "Gym"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=The+Westin+1",
-            "https://dummyimage.com/600x400/000/fff&text=The+Westin+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Heavenly Room",
-                "price": 15000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Executive Suite",
-                "price": 25000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Living Room", "Dining Area"]
-            },
-            {
-                "roomtype": "Presidential Suite",
-                "price": 50000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Private Pool", "Balcony"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 22000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Refrigerator", "Dining Area"]
-            }
-        ],
-        "createdAt": "2022-01-15"
+      "name": "Urban Chic Hotel",
+      "location": "Mumbai, India",
+      "describtion": "A modern hotel with chic interiors and vibrant nightlife.",
+      "amenities": ["Rooftop Bar", "Gym", "Free Parking"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Urban+Chic+Hotel+1",
+        "https://dummyimage.com/600x400/000/fff&text=Urban+Chic+Hotel+2"
+      ],
+      "createdAt": "2023-08-25T11:00:00Z"
     },
     {
-        "name": "The Leela",
-        "location": "Delhi",
-        "description": "An elegant hotel with luxurious rooms and exceptional dining.",
-        "amenities": ["Free Wi-Fi", "Restaurants", "Spa"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=The+Leela+1",
-            "https://dummyimage.com/600x400/000/fff&text=The+Leela+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Luxury Room",
-                "price": 18000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Royal Suite",
-                "price": 40000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Jacuzzi", "Living Room"]
-            },
-            {
-                "roomtype": "Club Room",
-                "price": 25000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Access to Club Lounge", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Presidential Suite",
-                "price": 60000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Private Pool", "Dining Room"]
-            }
-        ],
-        "createdAt": "2022-01-16"
+      "name": "Desert Oasis Hotel",
+      "location": "Jaisalmer, India",
+      "describtion": "A beautiful hotel in the heart of the Thar Desert.",
+      "amenities": ["Camel Rides", "Pool", "Free Breakfast"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Desert+Oasis+Hotel+1",
+        "https://dummyimage.com/600x400/000/fff&text=Desert+Oasis+Hotel+2"
+      ],
+      "createdAt": "2023-05-22T08:00:00Z"
     },
     {
-        "name": "Taj Lands End",
-        "location": "Mumbai",
-        "description": "A luxurious hotel with breathtaking views of the Arabian Sea.",
-        "amenities": ["Free Wi-Fi", "Restaurants", "Spa"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Taj+Lands+End+1",
-            "https://dummyimage.com/600x400/000/fff&text=Taj+Lands+End+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Superior Room",
-                "price": 15000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Executive Suite",
-                "price": 30000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Jacuzzi", "Dining Area"]
-            },
-            {
-                "roomtype": "Luxury Suite",
-                "price": 45000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Private Pool", "Balcony"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 25000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Refrigerator", "Dining Area"]
-            }
-        ],
-        "createdAt": "2022-01-17"
+      "name": "The Lakeside Inn",
+      "location": "Nainital, India",
+      "describtion": "A charming inn with a view of the serene lake.",
+      "amenities": ["Boating", "Fishing", "Restaurant"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=The+Lakeside+Inn+1",
+        "https://dummyimage.com/600x400/000/fff&text=The+Lakeside+Inn+2"
+      ],
+      "createdAt": "2023-03-18T14:00:00Z"
     },
     {
-        "name": "Radisson Blu",
-        "location": "Noida",
-        "description": "A modern hotel with exceptional hospitality and comfort.",
-        "amenities": ["Free Wi-Fi", "Spa", "Pool"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Radisson+Blu+1",
-            "https://dummyimage.com/600x400/000/fff&text=Radisson+Blu+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Deluxe Room",
-                "price": 12000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Air Conditioning", "Tea/Coffee Maker"]
-            },
-            {
-                "roomtype": "Business Class Room",
-                "price": 18000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Desk", "Refrigerator"]
-            },
-            {
-                "roomtype": "Suite",
-                "price": 30000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Living Room", "Dining Area"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 22000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Refrigerator", "Dining Area"]
-            }
-        ],
-        "createdAt": "2022-01-18"
+      "name": "Heritage Villa",
+      "location": "Jaipur, India",
+      "describtion": "A heritage property reflecting traditional Rajasthani architecture.",
+      "amenities": ["Free Wi-Fi", "Traditional Cuisine", "Spa"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Heritage+Villa+1",
+        "https://dummyimage.com/600x400/000/fff&text=Heritage+Villa+2"
+      ],
+      "createdAt": "2023-06-20T13:00:00Z"
     },
     {
-        "name": "The Oberoi",
-        "location": "New Delhi",
-        "description": "A luxury hotel with world-class amenities and exceptional service.",
-        "amenities": ["Pool", "Spa", "Restaurants"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=The+Oberoi+1",
-            "https://dummyimage.com/600x400/000/fff&text=The+Oberoi+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Deluxe Room",
-                "price": 10000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Air Conditioning", "Mini Bar"]
-            },
-            {
-                "roomtype": "Luxury Suite",
-                "price": 20000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Breakfast", "Living Room"]
-            },
-            {
-                "roomtype": "Executive Room",
-                "price": 15000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Air Conditioning", "Tea/Coffee Maker"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 25000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Air Conditioning", "Mini Bar"]
-            },
-            {
-                "roomtype": "Honeymoon Suite",
-                "price": 30000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Jacuzzi", "Balcony"]
-            }
-        ],
-        "createdAt": "2022-01-01"
+      "name": "The Cozy Cottage",
+      "location": "Shimla, India",
+      "describtion": "A warm and welcoming cottage nestled in the mountains.",
+      "amenities": ["Free Wi-Fi", "Garden", "Barbecue Facilities"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=The+Cozy+Cottage+1",
+        "https://dummyimage.com/600x400/000/fff&text=The+Cozy+Cottage+2"
+      ],
+      "createdAt": "2023-02-10T11:00:00Z"
     },
     {
-        "name": "Radisson Blu",
-        "location": "Gurugram",
-        "description": "An upscale hotel offering luxury accommodations.",
-        "amenities": ["Gym", "Free Breakfast", "Pool"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Radisson+Blu+1",
-            "https://dummyimage.com/600x400/000/fff&text=Radisson+Blu+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Standard Room",
-                "price": 8000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Executive Suite",
-                "price": 15000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Living Room", "Kitchenette"]
-            },
-            {
-                "roomtype": "Business Class Room",
-                "price": 12000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Desk", "Mini Bar"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 20000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Air Conditioning", "Refrigerator"]
-            },
-            {
-                "roomtype": "Presidential Suite",
-                "price": 30000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Dining Area", "Living Room"]
-            }
-        ],
-        "createdAt": "2022-01-02"
+      "name": "Cityscape Hotel",
+      "location": "Chennai, India",
+      "describtion": "A modern hotel with a panoramic city view.",
+      "amenities": ["Swimming Pool", "Business Center", "Gym"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Cityscape+Hotel+1",
+        "https://dummyimage.com/600x400/000/fff&text=Cityscape+Hotel+2"
+      ],
+      "createdAt": "2023-07-05T10:30:00Z"
     },
     {
-        "name": "ITC Maurya",
-        "location": "New Delhi",
-        "description": "A luxurious hotel with spacious rooms and fine dining.",
-        "amenities": ["Spa", "Pool", "Restaurants"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=ITC+Maurya+1",
-            "https://dummyimage.com/600x400/000/fff&text=ITC+Maurya+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "King Room",
-                "price": 12000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Air Conditioning", "Mini Bar"]
-            },
-            {
-                "roomtype": "Presidential Suite",
-                "price": 30000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Private Pool", "Dining Room"]
-            },
-            {
-                "roomtype": "Deluxe Room",
-                "price": 15000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Coffee Maker", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Royal Suite",
-                "price": 35000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Jacuzzi", "Balcony"]
-            },
-            {
-                "roomtype": "Executive Room",
-                "price": 17000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Air Conditioning", "Mini Bar"]
-            }
-        ],
-        "createdAt": "2022-01-03"
+      "name": "The Serenity Resort",
+      "location": "Kumarakom, India",
+      "describtion": "A tranquil resort overlooking the backwaters.",
+      "amenities": ["Ayurvedic Spa", "Yoga Classes", "Restaurant"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=The+Serenity+Resort+1",
+        "https://dummyimage.com/600x400/000/fff&text=The+Serenity+Resort+2"
+      ],
+      "createdAt": "2023-08-15T09:00:00Z"
     },
     {
-        "name": "Holiday Inn",
-        "location": "Mumbai",
-        "description": "A comfortable hotel with family-friendly amenities.",
-        "amenities": ["Gym", "Free Breakfast"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Holiday+Inn+1",
-            "https://dummyimage.com/600x400/000/fff&text=Holiday+Inn+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Family Room",
-                "price": 9000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Air Conditioning", "Refrigerator"]
-            },
-            {
-                "roomtype": "Business Room",
-                "price": 11000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Desk", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Standard Room",
-                "price": 8000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Coffee Maker", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Suite",
-                "price": 15000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Dining Area"]
-            },
-            {
-                "roomtype": "Deluxe Room",
-                "price": 12000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Air Conditioning"]
-            }
-        ],
-        "createdAt": "2022-01-04"
+      "name": "Royal Palm Resort",
+      "location": "Kerala, India",
+      "describtion": "A resort surrounded by palm trees and beautiful landscapes.",
+      "amenities": ["Beach Access", "Water Activities", "Spa"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Royal+Palm+Resort+1",
+        "https://dummyimage.com/600x400/000/fff&text=Royal+Palm+Resort+2"
+      ],
+      "createdAt": "2023-05-30T12:00:00Z"
     },
     {
-        "name": "Crowne Plaza",
-        "location": "New Delhi",
-        "description": "An upscale hotel with luxurious accommodations and services.",
-        "amenities": ["Spa", "Pool", "Restaurants"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Crowne+Plaza+1",
-            "https://dummyimage.com/600x400/000/fff&text=Crowne+Plaza+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Deluxe Room",
-                "price": 8500,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Coffee Maker", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Junior Suite",
-                "price": 17000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Living Room", "Dining Area"]
-            },
-            {
-                "roomtype": "Superior Room",
-                "price": 9500,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Business Room",
-                "price": 12000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Desk", "Mini Bar"]
-            },
-            {
-                "roomtype": "Executive Suite",
-                "price": 22000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Living Room", "Dining Area"]
-            }
-        ],
-        "createdAt": "2022-01-05"
+      "name": "The Art Hotel",
+      "location": "Pune, India",
+      "describtion": "A hotel showcasing local art and culture.",
+      "amenities": ["Gallery", "Restaurant", "Free Parking"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=The+Art+Hotel+1",
+        "https://dummyimage.com/600x400/000/fff&text=The+Art+Hotel+2"
+      ],
+      "createdAt": "2023-04-21T16:00:00Z"
     },
     {
-        "name": "Sheraton Grand",
-        "location": "Bengaluru",
-        "description": "A luxurious hotel offering comfort and modern amenities.",
-        "amenities": ["Free Wi-Fi", "Pool", "Spa"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Sheraton+Grand+1",
-            "https://dummyimage.com/600x400/000/fff&text=Sheraton+Grand+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Deluxe Room",
-                "price": 10000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Air Conditioning", "Mini Bar"]
-            },
-            {
-                "roomtype": "Club Room",
-                "price": 14000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Access to Club Lounge", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Executive Suite",
-                "price": 25000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Living Room", "Dining Area"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 18000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Presidential Suite",
-                "price": 35000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Private Pool", "Balcony"]
-            }
-        ],
-        "createdAt": "2022-01-06"
+      "name": "Tranquil Escape",
+      "location": "Rishikesh, India",
+      "describtion": "A peaceful hotel by the river for yoga enthusiasts.",
+      "amenities": ["Yoga Classes", "River Rafting", "Spa"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Tranquil+Escape+1",
+        "https://dummyimage.com/600x400/000/fff&text=Tranquil+Escape+2"
+      ],
+      "createdAt": "2023-03-10T15:00:00Z"
     },
     {
-        "name": "Marriott",
-        "location": "Hyderabad",
-        "description": "A modern hotel with luxurious accommodations.",
-        "amenities": ["Free Wi-Fi", "Restaurants", "Pool"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Marriott+1",
-            "https://dummyimage.com/600x400/000/fff&text=Marriott+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Deluxe Room",
-                "price": 9000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Air Conditioning", "Refrigerator"]
-            },
-            {
-                "roomtype": "Club Room",
-                "price": 14000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Access to Club Lounge", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Suite",
-                "price": 22000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Living Room", "Dining Area"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 15000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Presidential Suite",
-                "price": 30000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Private Pool", "Dining Room"]
-            }
-        ],
-        "createdAt": "2022-01-07"
+      "name": "The Royal Fort",
+      "location": "Jodhpur, India",
+      "describtion": "A hotel with heritage fort architecture and royal hospitality.",
+      "amenities": ["Free Wi-Fi", "Swimming Pool", "Restaurant"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=The+Royal+Fort+1",
+        "https://dummyimage.com/600x400/000/fff&text=The+Royal+Fort+2"
+      ],
+      "createdAt": "2023-02-01T10:00:00Z"
     },
     {
-        "name": "Hyatt Regency",
-        "location": "Chennai",
-        "description": "A stylish hotel with spacious accommodations and excellent dining options.",
-        "amenities": ["Free Wi-Fi", "Spa", "Pool"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Hyatt+Regency+1",
-            "https://dummyimage.com/600x400/000/fff&text=Hyatt+Regency+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Standard Room",
-                "price": 8000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Deluxe Room",
-                "price": 11000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 16000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Refrigerator", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Business Class Room",
-                "price": 15000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Desk", "Mini Bar"]
-            },
-            {
-                "roomtype": "Presidential Suite",
-                "price": 32000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Dining Area", "Living Room"]
-            }
-        ],
-        "createdAt": "2022-01-08"
+      "name": "Coastal Breeze Hotel",
+      "location": "Puducherry, India",
+      "describtion": "A charming coastal hotel with beach access.",
+      "amenities": ["Beach Access", "Free Breakfast", "Bar"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Coastal+Breeze+Hotel+1",
+        "https://dummyimage.com/600x400/000/fff&text=Coastal+Breeze+Hotel+2"
+      ],
+      "createdAt": "2023-04-15T11:00:00Z"
     },
     {
-        "name": "Leela Palace",
-        "location": "Bengaluru",
-        "description": "An iconic hotel with opulent design and luxurious amenities.",
-        "amenities": ["Spa", "Pool", "Restaurants"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Leela+Palace+1",
-            "https://dummyimage.com/600x400/000/fff&text=Leela+Palace+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Deluxe Room",
-                "price": 12000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Royal Suite",
-                "price": 40000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Jacuzzi", "Living Room"]
-            },
-            {
-                "roomtype": "Luxury Room",
-                "price": 18000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Tea/Coffee Maker", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Presidential Suite",
-                "price": 50000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Private Pool", "Dining Room"]
-            },
-            {
-                "roomtype": "Club Room",
-                "price": 20000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Access to Club Lounge", "Air Conditioning"]
-            }
-        ],
-        "createdAt": "2022-01-09"
+      "name": "Skyline Hotel",
+      "location": "Hyderabad, India",
+      "describtion": "A modern hotel with a stunning skyline view.",
+      "amenities": ["Rooftop Restaurant", "Free Wi-Fi", "Pool"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Skyline+Hotel+1",
+        "https://dummyimage.com/600x400/000/fff&text=Skyline+Hotel+2"
+      ],
+      "createdAt": "2023-06-30T13:00:00Z"
     },
     {
-        "name": "Taj Mahal Palace",
-        "location": "Mumbai",
-        "description": "An iconic hotel with luxurious accommodations and stunning views.",
-        "amenities": ["Free Wi-Fi", "Restaurants", "Spa"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Taj+Mahal+Palace+1",
-            "https://dummyimage.com/600x400/000/fff&text=Taj+Mahal+Palace+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Deluxe Room",
-                "price": 14000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Luxury Suite",
-                "price": 30000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Jacuzzi", "Living Room"]
-            },
-            {
-                "roomtype": "Superior Room",
-                "price": 10000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Tea/Coffee Maker", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Presidential Suite",
-                "price": 60000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Private Pool", "Dining Room"]
-            },
-            {
-                "roomtype": "Executive Room",
-                "price": 20000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Access to Executive Lounge", "Air Conditioning"]
-            }
-        ],
-        "createdAt": "2022-01-10"
+      "name": "Sunset Villa",
+      "location": "Coorg, India",
+      "describtion": "A tranquil villa with beautiful sunset views.",
+      "amenities": ["Coffee Plantation", "Spa", "Hiking"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Sunset+Villa+1",
+        "https://dummyimage.com/600x400/000/fff&text=Sunset+Villa+2"
+      ],
+      "createdAt": "2023-08-03T12:00:00Z"
     },
     {
-        "name": "Novotel",
-        "location": "Pune",
-        "description": "A modern hotel with comfortable accommodations.",
-        "amenities": ["Free Wi-Fi", "Pool", "Gym"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Novotel+1",
-            "https://dummyimage.com/600x400/000/fff&text=Novotel+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Standard Room",
-                "price": 7000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Deluxe Room",
-                "price": 11000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 16000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Refrigerator", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Suite",
-                "price": 25000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Living Room", "Dining Area"]
-            },
-            {
-                "roomtype": "Presidential Suite",
-                "price": 35000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Private Pool", "Dining Room"]
-            }
-        ],
-        "createdAt": "2022-01-11"
+      "name": "Cultural Heritage Hotel",
+      "location": "Varanasi, India",
+      "describtion": "A hotel reflecting the rich culture of Varanasi.",
+      "amenities": ["Free Wi-Fi", "Cultural Shows", "Spa"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Cultural+Heritage+Hotel+1",
+        "https://dummyimage.com/600x400/000/fff&text=Cultural+Heritage+Hotel+2"
+      ],
+      "createdAt": "2023-07-18T09:00:00Z"
     },
     {
-        "name": "Radisson Blu",
-        "location": "Delhi",
-        "description": "A luxurious hotel with modern facilities.",
-        "amenities": ["Free Wi-Fi", "Spa", "Pool"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=Radisson+Blu+1",
-            "https://dummyimage.com/600x400/000/fff&text=Radisson+Blu+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Standard Room",
-                "price": 8000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Deluxe Room",
-                "price": 12000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 18000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Refrigerator", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Executive Room",
-                "price": 22000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Living Room", "Dining Area"]
-            },
-            {
-                "roomtype": "Presidential Suite",
-                "price": 40000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Private Pool", "Dining Room"]
-            }
-        ],
-        "createdAt": "2022-01-12"
+      "name": "Island Getaway Resort",
+      "location": "Andaman, India",
+      "describtion": "A secluded resort on a private island.",
+      "amenities": ["Private Beach", "Diving", "Water Sports"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Island+Getaway+Resort+1",
+        "https://dummyimage.com/600x400/000/fff&text=Island+Getaway+Resort+2"
+      ],
+      "createdAt": "2023-05-28T10:00:00Z"
     },
     {
-        "name": "The Oberoi",
-        "location": "Kolkata",
-        "description": "An elegant hotel offering exceptional service.",
-        "amenities": ["Free Wi-Fi", "Spa", "Gym"],
-        "images": [
-            "https://dummyimage.com/600x400/000/fff&text=The+Oberoi+1",
-            "https://dummyimage.com/600x400/000/fff&text=The+Oberoi+2"
-        ],
-        "rooms": [
-            {
-                "roomtype": "Deluxe Room",
-                "price": 9500,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Luxury Room",
-                "price": 15000,
-                "availability": true,
-                "capacity": 3,
-                "amenities": ["Free Wi-Fi", "Tea/Coffee Maker", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Family Room",
-                "price": 17000,
-                "availability": true,
-                "capacity": 4,
-                "amenities": ["Free Wi-Fi", "Refrigerator", "Air Conditioning"]
-            },
-            {
-                "roomtype": "Presidential Suite",
-                "price": 60000,
-                "availability": true,
-                "capacity": 5,
-                "amenities": ["Free Wi-Fi", "Private Pool", "Dining Room"]
-            },
-            {
-                "roomtype": "Club Room",
-                "price": 20000,
-                "availability": true,
-                "capacity": 2,
-                "amenities": ["Free Wi-Fi", "Access to Club Lounge", "Air Conditioning"]
-            }
-        ],
-        "createdAt": "2022-01-13"
+      "name": "Sapphire Bay Hotel",
+      "location": "Kolkata, India",
+      "describtion": "A luxury hotel with a view of the bay.",
+      "amenities": ["Spa", "Free Breakfast", "Swimming Pool"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Sapphire+Bay+Hotel+1",
+        "https://dummyimage.com/600x400/000/fff&text=Sapphire+Bay+Hotel+2"
+      ],
+      "createdAt": "2023-08-22T14:00:00Z"
     },
-     {
-    "name": "Waldorf Astoria",
-    "location": "Chicago",
-    "description": "An iconic hotel known for its luxurious accommodations.",
-    "amenities": ["Free Wi-Fi", "Spa", "Gym"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Waldorf+Astoria+1",
-      "https://dummyimage.com/600x400/000/fff&text=Waldorf+Astoria+2"
-    ],
-    "rooms": [
-      {
-        "roomtype": "Deluxe Room",
-        "price": 28000,
-        "availability": true,
-        "capacity": 2,
-        "amenities": ["Free Wi-Fi", "Mini Bar", "Air Conditioning"]
-      },
-      {
-        "roomtype": "Executive Suite",
-        "price": 60000,
-        "availability": true,
-        "capacity": 4,
-        "amenities": ["Free Wi-Fi", "Jacuzzi", "Living Room"]
-      },
-      {
-        "roomtype": "Presidential Suite",
-        "price": 80000,
-        "availability": true,
-        "capacity": 6,
-        "amenities": ["Free Wi-Fi", "Dining Room", "Private Terrace"]
-      },
-      {
-        "roomtype": "Family Room",
-        "price": 35000,
-        "availability": true,
-        "capacity": 5,
-        "amenities": ["Free Wi-Fi", "Refrigerator", "Dining Area"]
-      }
-    ],
-    "createdAt": "2022-01-21"
-  },
-  {
-    "name": "Sheraton",
-    "location": "Boston",
-    "description": "A classic hotel offering modern amenities.",
-    "amenities": ["Free Wi-Fi", "Pool", "Gym"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Sheraton+1",
-      "https://dummyimage.com/600x400/000/fff&text=Sheraton+2"
-    ],
-    "rooms": [
-      {
-        "roomtype": "Standard Room",
-        "price": 18000,
-        "availability": true,
-        "capacity": 2,
-        "amenities": ["Free Wi-Fi", "Air Conditioning"]
-      },
-      {
-        "roomtype": "King Room",
-        "price": 24000,
-        "availability": true,
-        "capacity": 3,
-        "amenities": ["Free Wi-Fi", "Mini Bar", "Coffee Maker"]
-      },
-      {
-        "roomtype": "Club Room",
-        "price": 35000,
-        "availability": true,
-        "capacity": 4,
-        "amenities": ["Free Wi-Fi", "Access to Club Lounge", "Living Room"]
-      },
-      {
-        "roomtype": "Family Suite",
-        "price": 30000,
-        "availability": true,
-        "capacity": 5,
-        "amenities": ["Free Wi-Fi", "Refrigerator", "Dining Area"]
-      }
-    ],
-    "createdAt": "2022-01-22"
-  },
-  {
-    "name": "InterContinental",
-    "location": "Los Angeles",
-    "description": "A luxury hotel offering sophisticated rooms and amenities.",
-    "amenities": ["Free Wi-Fi", "Restaurants", "Spa"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=InterContinental+1",
-      "https://dummyimage.com/600x400/000/fff&text=InterContinental+2"
-    ],
-    "rooms": [
-      {
-        "roomtype": "Deluxe Room",
-        "price": 22000,
-        "availability": true,
-        "capacity": 2,
-        "amenities": ["Free Wi-Fi", "Air Conditioning", "Tea/Coffee Maker"]
-      },
-      {
-        "roomtype": "Premium Suite",
-        "price": 40000,
-        "availability": true,
-        "capacity": 4,
-        "amenities": ["Free Wi-Fi", "Living Room", "Dining Area"]
-      },
-      {
-        "roomtype": "Presidential Suite",
-        "price": 60000,
-        "availability": true,
-        "capacity": 6,
-        "amenities": ["Free Wi-Fi", "Private Pool", "Balcony"]
-      },
-      {
-        "roomtype": "Family Room",
-        "price": 28000,
-        "availability": true,
-        "capacity": 5,
-        "amenities": ["Free Wi-Fi", "Refrigerator", "Dining Area"]
-      }
-    ],
-    "createdAt": "2022-01-23"
-  },
-  {
-    "name": "Hilton Garden Inn",
-    "location": "Atlanta",
-    "description": "A comfortable hotel perfect for business and leisure travelers.",
-    "amenities": ["Free Wi-Fi", "Pool", "Gym"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Hilton+Garden+Inn+1",
-      "https://dummyimage.com/600x400/000/fff&text=Hilton+Garden+Inn+2"
-    ],
-    "rooms": [
-      {
-        "roomtype": "Standard Room",
-        "price": 13000,
-        "availability": true,
-        "capacity": 2,
-        "amenities": ["Free Wi-Fi", "Air Conditioning", "Tea/Coffee Maker"]
-      },
-      {
-        "roomtype": "King Room",
-        "price": 20000,
-        "availability": true,
-        "capacity": 3,
-        "amenities": ["Free Wi-Fi", "Mini Bar", "Refrigerator"]
-      },
-      {
-        "roomtype": "Suite",
-        "price": 28000,
-        "availability": true,
-        "capacity": 4,
-        "amenities": ["Free Wi-Fi", "Living Room", "Dining Area"]
-      },
-      {
-        "roomtype": "Family Room",
-        "price": 23000,
-        "availability": true,
-        "capacity": 5,
-        "amenities": ["Free Wi-Fi", "Refrigerator", "Dining Table"]
-      }
-    ],
-    "createdAt": "2022-01-24"
-  }
-]
+    {
+      "name": "Golden Leaf Hotel",
+      "location": "Chandigarh, India",
+      "describtion": "A hotel surrounded by beautiful gardens.",
+      "amenities": ["Garden", "Free Parking", "Restaurant"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Golden+Leaf+Hotel+1",
+        "https://dummyimage.com/600x400/000/fff&text=Golden+Leaf+Hotel+2"
+      ],
+      "createdAt": "2023-06-12T11:00:00Z"
+    },
+    {
+      "name": "The Luxury Stay",
+      "location": "Bangalore, India",
+      "describtion": "A premium hotel for business and leisure travelers.",
+      "amenities": ["Business Center", "Gym", "Spa"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=The+Luxury+Stay+1",
+        "https://dummyimage.com/600x400/000/fff&text=The+Luxury+Stay+2"
+      ],
+      "createdAt": "2023-09-10T09:30:00Z"
+    },
+    {
+      "name": "The Green Valley",
+      "location": "Munnar, India",
+      "describtion": "A beautiful hotel set amidst lush green valleys.",
+      "amenities": ["Nature Trails", "Spa", "Free Breakfast"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=The+Green+Valley+1",
+        "https://dummyimage.com/600x400/000/fff&text=The+Green+Valley+2"
+      ],
+      "createdAt": "2023-08-28T10:00:00Z"
+    },
+    {
+      "name": "Heritage Palace Hotel",
+      "location": "Lucknow, India",
+      "describtion": "A heritage hotel with a rich history.",
+      "amenities": ["Free Wi-Fi", "Traditional Cuisine", "Spa"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=Heritage+Palace+Hotel+1",
+        "https://dummyimage.com/600x400/000/fff&text=Heritage+Palace+Hotel+2"
+      ],
+      "createdAt": "2023-05-19T11:30:00Z"
+    },
+    {
+      "name": "The Urban Stay",
+      "location": "Delhi, India",
+      "describtion": "A modern hotel in the city center.",
+      "amenities": ["Free Wi-Fi", "Gym", "Rooftop Restaurant"],
+      "images": [
+        "https://dummyimage.com/600x400/000/fff&text=The+Urban+Stay+1",
+        "https://dummyimage.com/600x400/000/fff&text=The+Urban+Stay+2"
+      ],
+      "createdAt": "2023-07-01T12:45:00Z"
+    }
+  ]
+  
 
-module.exports = hoteldata
+  module.exports= hoteldata
