@@ -1,8 +1,9 @@
 const roomschema = require("../models/roomschema");
 
 
-const makingroomdata = (hoteldata, roomdata) => {
-   const uniqueIds = new Set(hoteldata.map((hotelid) => hotelid._id.toString()))
+const makingroomdata = (hotelFound, roomdata) => {
+   console.log("hittt")
+   const uniqueIds = new Set(hotelFound.map((hotelid) => hotelid._id.toString()))
    const filterhotelId = Array.from(uniqueIds).map(id => ({ hotelId: id }))
    let roomsIndex = 0;
    const resultData = []; 

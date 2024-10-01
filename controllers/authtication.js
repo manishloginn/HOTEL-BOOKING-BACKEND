@@ -1,26 +1,29 @@
-const roomdata = require("../data/roomdata");
-const hotelschema = require("../models/hotelschema");
-const roomschema = require("../models/roomschema");
+
 const userschema = require("../models/userschema");
-const makingroomdata = require("../utils/filteridFromHotel");
 const { registrationValidator } = require("../utils/registraionvalidator");
 
 
-
-
-const inserRoomMany = async (req, res) => {
+const roomAdd = (req, res) => {
+    const {hotelId, roomtype, price, availability, capacity, amenities} = req.body
+    console.log(req.body)
     try {
-        const hoteldata = await hotelschema.find()
-        const roomData = await roomdata
-        const roomDataWithHotelId =  await makingroomdata(hoteldata, roomData)
-        const deleteroom = roomschema.deleteMany()
-        const addmanyrooms = roomschema.insertMany(roomDataWithHotelId)
-        res.status(200).json(roomDataWithHotelId)
+       const data = new roomschema({
+        hotelId, 
+        roomtype, 
+        price, 
+        availability, 
+        capacity, 
+        amenities
+       })
+
+       data.save()
+       res.status(201).send(data);
     } catch (error) {
-        console.log(error)
-        res.status(500).json(error)
+        console.error("Error adding data:", error);
+        res.status(500).send({ error: "An error occurred while adding data." });
     }
 }
+
 
 const registration = async (req, res) => {
     const { username, password, email, role } = req.body;
@@ -57,4 +60,4 @@ const login = async (req, res) => {
 }
 
 
-module.exports = { registration, login, inserRoomMany }
+module.exports = { registration, login, roomAdd}
