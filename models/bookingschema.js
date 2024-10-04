@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const bookingschema = new Schema ({
     userId : {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "user",
+        ref: "users",
         required : true
     },
     hotelId : {

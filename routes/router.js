@@ -1,27 +1,19 @@
 const express = require('express')
-const { registration, login, roomAdd } = require('../controllers/authtication')
+const { userRegistration, userLogin, roomAdd, hotelRegistration, adminLogin } = require('../controllers/authtication')
 const insertData = require('../controllers/addDatatodb')
+const { bookRoom } = require('../controllers/booking')
 const router = express.Router()
 
 
 
 
 router.post('/insertData', insertData)
-router.post('/Register', registration)
-router.post('/login', login)
-router.post('/addHotel', async (req, res) => {
-    try {
-        const delet = await hotelschema.deleteMany();
-        const data = await hotelschema.insertMany(hoteldata);
-        res.status(201).send(data);
-    } catch (error) {
-        console.error("Error adding data:", error);
-        res.status(500).send({ error: "An error occurred while adding data." });
-    }
-})
-
+router.post('/userRegister', userRegistration)
+router.post('/userLogin', userLogin)
+router.post('/adminRegistration', hotelRegistration)
+router.post('/adminLogin', adminLogin)
 router.post('/roomadd', roomAdd )
-
+router.post('/bookRoom', bookRoom)
 
 
 

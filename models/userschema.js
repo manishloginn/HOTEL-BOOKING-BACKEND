@@ -5,7 +5,7 @@ const user = new Schema({
     username: {type: String, unique: true,required: true},
     password: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    role: { type: String, enum: ['guest', 'admin'], default: 'guest' },
+    role: { type: String, required:true },
     createdAt: { type: Date, default: Date.now },
 })
 

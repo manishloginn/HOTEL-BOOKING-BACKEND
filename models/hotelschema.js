@@ -34,7 +34,7 @@ const hotelschema = new Schema({
         type:String, 
         required:true,
     },
-    describtion : {
+    description : {
         type:String
     },
     amenities : [String],
@@ -43,7 +43,12 @@ const hotelschema = new Schema({
     email:{
         type:String,
         required:true
-    }
+    },
+    password: {
+        type:String,
+        required:true
+    }, 
+    role: { type: String, required:true }
 })
 
 module.exports = mongoose.model('hotel', hotelschema)

@@ -1,23 +1,97 @@
 
+const hotelschema = require("../models/hotelschema");
 const userschema = require("../models/userschema");
-const { registrationValidator } = require("../utils/registraionvalidator");
+const JWT = require('jsonwebtoken')
+
+
+const { registrationValidator, addHotelValidator, validateAdmin } = require("../utils/registraionvalidator");
+
+
+const hotelRegistration = async (req, res) => {
+    const { name, location, description, amenities, images, createdAt, email, password } = req.body
+    try {
+        await addHotelValidator({ name, location, description, amenities, images, createdAt, email })
+        const data = new hotelschema({
+            name,
+            location,
+            description,
+            amenities,
+            images,
+            createdAt,
+            email,
+            password
+        })
+        data.save()
+        res.send({
+            status: 200,
+            message: "Hotel Data save"
+        })
+    } catch (error) {
+        console.error("Error adding data:", error);
+        res.status(500).send({ error: "An error occurred while adding data." });
+    }
+}
+
+const adminLogin = async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        validateAdmin({ email, password })
+        const findadmin = await hotelschema.findOne({ email: email })
+        if (!findadmin) {
+            return res.send({
+                status: 401,
+                message: "admin not found"
+            })
+        }
+        const match = findadmin.password !== password
+        if (match) {
+            return res.send({
+                statud: 401,
+                message: "password not match"
+            })
+        }
+
+        const token = JWT.sign(
+            {id:findadmin._id, email:findadmin.email, role:findadmin.role},
+            process.env.JWT_SECRET, 
+            { expiresIn: '1h' }
+        )
+
+        res.cookie("adminToken", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', 
+            sameSite: 'Strict', 
+            maxAge: 3600000, 
+        })
+
+        return res.send({
+            status: 200,
+            message: "user Login successfull",
+            data: findadmin
+        })
+
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
 
 
 const roomAdd = (req, res) => {
-    const {hotelId, roomtype, price, availability, capacity, amenities} = req.body
+    const { hotelId, roomtype, price, availability, capacity, amenities } = req.body
     console.log(req.body)
     try {
-       const data = new roomschema({
-        hotelId, 
-        roomtype, 
-        price, 
-        availability, 
-        capacity, 
-        amenities
-       })
+        const data = new roomschema({
+            hotelId,
+            roomtype,
+            price,
+            availability,
+            capacity,
+            amenities
+        })
 
-       data.save()
-       res.status(201).send(data);
+        data.save()
+        res.status(201).send(data);
     } catch (error) {
         console.error("Error adding data:", error);
         res.status(500).send({ error: "An error occurred while adding data." });
@@ -25,21 +99,17 @@ const roomAdd = (req, res) => {
 }
 
 
-const registration = async (req, res) => {
+const userRegistration = async (req, res) => {
     const { username, password, email, role } = req.body;
-
     try {
-        // Validate the incoming data
         await registrationValidator({ username, password, email, role });
-        let findindb = await userschema.findOne({ email }); 
-
+        let findindb = await userschema.findOne({ email });
         if (findindb) {
             return res.send({
                 status: 401,
-                message: "User already exists" 
+                message: "User already exists"
             });
         }
-
         const data = new userschema({
             username,
             password,
@@ -51,13 +121,53 @@ const registration = async (req, res) => {
 
         res.status(201).json(data);
     } catch (error) {
-        console.error("Registration error:", error); 
+        console.error("Registration error:", error);
         res.status(500).send({ error: "An error occurred during registration." });
     }
 }
 
-const login = async (req, res) => {  
+const userLogin = async (req, res) => {
+    const { email, password } = req.body
+    try {
+        const findUser = await userschema.findOne({ email: email })
+        if (!findUser) {
+            return res.send({
+                status: 200,
+                message: "user Not found"
+            })
+        }
+
+        const passwordmatch = findUser.password !== password
+
+        if (passwordmatch) {
+            return res.send({
+                status: 401,
+                message: "password not match"
+            })
+        }
+        const token = JWT.sign(
+            { id: findUser._id, email: findUser.email, role: findUser.role },
+            process.env.JWT_SECRET,
+            { expiresIn: '1h' }
+        )
+
+        res.cookie("userToken", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', 
+            sameSite: 'Strict', 
+            maxAge: 3600000, 
+        })
+
+        // console.log("Cookie set:", token);
+
+        res.send("login success")
+    } catch (error) {
+
+    }
 }
 
 
-module.exports = { registration, login, roomAdd}
+
+
+
+module.exports = { userRegistration, userLogin, roomAdd, hotelRegistration, adminLogin }
