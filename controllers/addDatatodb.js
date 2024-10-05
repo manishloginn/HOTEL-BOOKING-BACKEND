@@ -14,8 +14,8 @@ const insertData = async (req, res) => {
         const data = await hotelschema.insertMany(hoteldata);
         const hotelFound = await hotelschema.find()
         const roomData = await roomdata
-        const roomDataWithHotelId = await makingroomdata(hotelFound, roomData)
         const deleteroom = roomschema.deleteMany()
+        const roomDataWithHotelId = await makingroomdata(hotelFound, roomData)
         const addmanyrooms = roomschema.insertMany(roomDataWithHotelId)
         res.status(200).json(roomDataWithHotelId)
     } catch (error) {

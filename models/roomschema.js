@@ -25,27 +25,25 @@ const roomschema = new Schema({
     },
     amenities: [String],
 
-    // bookedDates: [
-    //     {
-    //         user: {
-    //             type: mongoose.Schema.Types.ObjectId,
-    //             ref: 'user', 
-    //         },
-    //         dates: {
-    //             type: Date,
-    //             required: true,
-    //             _id: false
-    //         }
-    //     }]
+    bookedDates: [
+        {
+            user: {
+                type: String,
+                // ref: 'user', 
+            },
+            dates: [
+              
+            ]
+        }]
 
 
-    bookedDates:[
-    ],
-    user: {
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"users", 
-        required:true
-    }
+    // bookedDates:[
+    // ],
+    // user: {
+    //     type:mongoose.Schema.Types.ObjectId,
+    //     ref:"users", 
+    //     required:true
+    // }
 }, { strict: false })
 
 // 

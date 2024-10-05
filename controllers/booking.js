@@ -3,43 +3,64 @@ const { isRoomAvailable } = require("../utils/isRoomAvailable");
 
 const bookRoom = async (req, res) => {
 
-    const {roomId, startDate, endDate, userId} = req.body
+    const { roomId, startDate, endDate, userId } = req.body
 
-
- 
-
-
-    try { 
+    try {
         const isAvailable = await isRoomAvailable(roomId, startDate, endDate);
-        if(!isAvailable){
+        if (!isAvailable) {
             return res.send({
-                status:400, 
-                message: 'Room is not available for the selected date range' 
+                status: 400,
+                message: 'Room is not available for the selected date range'
             })
         }
         const room = await roomschema.findById(roomId)
         let currentDate = new Date(startDate)
+        const end = new Date(endDate);
 
-        while(currentDate <= new Date(endDate)){
-            room.bookedDates.push(new Date(currentDate))
-            currentDate.setDate(currentDate.getDate() + 1)
+
+
+        let existingUserBooking = room.bookedDates.find(
+            (booking) => booking.user.toString() === userId.toString()
+        );
+        // console.log(existingUserBooking)
+        const bookingDates = [];
+
+        while (currentDate <= end) {
+            bookingDates.push(new Date(currentDate));
+            currentDate.setDate(currentDate.getDate() + 1);
         }
 
-        room.user = userId
-        await room.save()
+        if (existingUserBooking) {
+            console.log("existinguser")
+            existingUserBooking.dates.push(...bookingDates);
+            room.save()
+            res.send({
+                status: 200,
+                message: 'Room booked successfully Updated'
+            })
+        } else {
+            console.log("else existinguser")
+            room.bookedDates.push({
+                user: userId,
+                dates: bookingDates,
+            });
 
-        console.log(room)
-        res.send({
-            status:200,
-            message:'Room booked successfully for the selected date range'
-        })
+            // room.user = userId
+            await room.save()
 
-        console.log(room)
+            res.send({
+                status: 200,
+                message: 'Room booked successfully for the selected date range'
+            })
 
-    } catch (error) {
+            console.log(room)
+
+        }
+    }
+    catch (error) {
         console.log(error)
         res.status(500).json({ message: error.message });
     }
 }
 
-module.exports = {bookRoom}
+module.exports = { bookRoom }

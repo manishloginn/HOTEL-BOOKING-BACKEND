@@ -28,8 +28,14 @@ const makingroomdata = (hotelFound, roomdata) => {
                availability: room.availability,
                capacity: room.capacity,
                amenities: room.amenities,
-               bookedDates:[],
-               user:''
+               bookedDates:[
+                  {
+                     user:'',
+                     dates:[]
+                  }
+               ],
+               // bookedDates:[],
+               // user:''
             });
             resultData.push(data);
             console.log(data);
