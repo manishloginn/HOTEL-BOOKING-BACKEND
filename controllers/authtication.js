@@ -148,14 +148,14 @@ const userLogin = async (req, res) => {
         const token = JWT.sign(
             { id: findUser._id, email: findUser.email, role: findUser.role },
             process.env.JWT_SECRET,
-            { expiresIn: '1h' }
+            { expiresIn: '10h' }
         )
 
         res.cookie("userToken", token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production', 
             sameSite: 'Strict', 
-            maxAge: 3600000, 
+            maxAge: 3600000 + 86400, 
         })
 
         // console.log("Cookie set:", token);

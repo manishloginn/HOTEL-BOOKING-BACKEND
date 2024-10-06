@@ -11,7 +11,6 @@ const cors = require('cors');
 
 const Auth = require('./routes/router')
 const insertData = require('./routes/router')
-const filteridFromHotel = require('./utils/filteridFromHotel')
 app.use(cookieParser());
 
 
@@ -34,7 +33,6 @@ app.get("/", (req, res) => {
 
 app.use('/', Auth)
 
-app.use('/', insertData)
 
 
 
