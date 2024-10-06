@@ -15,12 +15,6 @@ const makingroomdata = (hotelFound, roomdata) => {
 
          if(roomsIndex < roomdata.length){
             const room = roomdata[roomsIndex];
-
-            // const bookedDates = room.bookedDates ? room.bookedDates.map(booking=> ({
-            //    user:mongoose.Types.ObjectId(booking.user),
-            //    dates: booking.dates.map(date => new Date(date))
-            // })) : [];
-
             const data = new roomschema({
                hotelId: filterhotelId[i].hotelId.toString(),
                roomtype: room.roomtype,
@@ -34,8 +28,7 @@ const makingroomdata = (hotelFound, roomdata) => {
                      dates:[]
                   }
                ],
-               // bookedDates:[],
-               // user:''
+               bookedDates:[],
             });
             resultData.push(data);
             console.log(data);
