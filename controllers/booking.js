@@ -27,7 +27,16 @@ const bookRoom = async (req, res) => {
         // const bookingSchema = await bookingschema()
         let currentDate = new Date(startDate)
         const end = new Date(endDate);
+        
+        // currentDate.setUTCHours(11, 0, 0, 0);
+        // end.setUTCHours(10, 59, 59, 0);
 
+        if(guest > room.capacity){
+            return res.send({
+                status:401,
+                message:`room capacity only ${room.capacity} people`
+            })
+        }
 
 
         let existingUserBooking = room.bookedDates.find(

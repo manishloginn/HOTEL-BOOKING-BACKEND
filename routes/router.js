@@ -3,6 +3,7 @@ const { userRegistration, userLogin, roomAdd, hotelRegistration, adminLogin } = 
 const insertData = require('../controllers/addDatatodb')
 const { bookRoom } = require('../controllers/booking')
 const authenticateUser = require('../utils/authenticateUser')
+const fetchHotel = require('../controllers/fetchHotem')
 const router = express.Router()
 
 
@@ -15,6 +16,7 @@ router.post('/adminRegistration', hotelRegistration)
 router.post('/adminLogin', adminLogin)
 router.post('/roomadd', roomAdd )
 router.post('/bookRoom', authenticateUser, bookRoom)
+router.get('/hotelData', fetchHotel)
 
 
 

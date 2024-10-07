@@ -10,11 +10,8 @@ const authenticateUser = ( req, res, next ) => {
         })
     }
 
-    console.log("token",   token)
-
     try {
             const verified = JWT.verify(token, process.env.JWT_SECRET)
-            console.log("Verified Payload:", verified); 
             req.user = verified;
             next()
     } catch (error) {
