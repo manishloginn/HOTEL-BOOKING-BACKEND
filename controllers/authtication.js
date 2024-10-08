@@ -9,6 +9,12 @@ const { registrationValidator, addHotelValidator, validateAdmin } = require("../
 
 const hotelRegistration = async (req, res) => {
     const { name, location, description, amenities, images, createdAt, email, password } = req.body
+    if(!name || !location || !description || !amenities || !images || !createdAt || !email || !password){
+        return res.send({
+            status: 200,
+            message: "invalid data"
+        })
+    }
     try {
         await addHotelValidator({ name, location, description, amenities, images, createdAt, email })
         const data = new hotelschema({
@@ -27,14 +33,18 @@ const hotelRegistration = async (req, res) => {
             message: "Hotel Data save"
         })
     } catch (error) {
-        console.error("Error adding data:", error);
         res.status(500).send({ error: "An error occurred while adding data." });
     }
 }
 
 const adminLogin = async (req, res) => {
     const { email, password } = req.body;
-
+    if(!email || !password){
+        return res.send({
+            status: 400,
+            message: "invalid user data"
+        })
+    }
     try {
         validateAdmin({ email, password })
         const findadmin = await hotelschema.findOne({ email: email })
@@ -53,16 +63,16 @@ const adminLogin = async (req, res) => {
         }
 
         const token = JWT.sign(
-            {id:findadmin._id, email:findadmin.email, role:findadmin.role},
-            process.env.JWT_SECRET, 
+            { id: findadmin._id, email: findadmin.email, role: findadmin.role },
+            process.env.JWT_SECRET,
             { expiresIn: '1h' }
         )
 
         res.cookie("adminToken", token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production', 
-            sameSite: 'Strict', 
-            maxAge: 3600000, 
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'Strict',
+            maxAge: 3600000,
         })
 
         return res.send({
@@ -79,7 +89,12 @@ const adminLogin = async (req, res) => {
 
 const roomAdd = (req, res) => {
     const { hotelId, roomtype, price, availability, capacity, amenities } = req.body
-    console.log(req.body)
+    if(!hotelId || !roomtype || !price || !availability || !capacity || !amenities){
+        return res.send({
+            status: 400,
+            message: "invalid data"
+        })
+    }
     try {
         const data = new roomschema({
             hotelId,
@@ -93,7 +108,6 @@ const roomAdd = (req, res) => {
         data.save()
         res.status(201).send(data);
     } catch (error) {
-        console.error("Error adding data:", error);
         res.status(500).send({ error: "An error occurred while adding data." });
     }
 }
@@ -101,6 +115,14 @@ const roomAdd = (req, res) => {
 
 const userRegistration = async (req, res) => {
     const { username, password, email, role } = req.body;
+
+    if(!username || !password || !email || !role){
+        return res.send({
+            status: 400,
+            message: "invalid user data"
+        })
+    }
+
     try {
         await registrationValidator({ username, password, email, role });
         let findindb = await userschema.findOne({ email });
@@ -110,6 +132,7 @@ const userRegistration = async (req, res) => {
                 message: "User already exists"
             });
         }
+
         const data = new userschema({
             username,
             password,
@@ -121,18 +144,25 @@ const userRegistration = async (req, res) => {
 
         res.status(201).json(data);
     } catch (error) {
-        console.error("Registration error:", error);
         res.status(500).send({ error: "An error occurred during registration." });
     }
 }
 
 const userLogin = async (req, res) => {
     const { email, password } = req.body
+
+    if (!email || !password) {
+        return res.send({
+            status: 400,
+            message: "invalid user data"
+        })
+    }
+
     try {
         const findUser = await userschema.findOne({ email: email })
         if (!findUser) {
             return res.send({
-                status: 200,
+                status: 203,
                 message: "user Not found"
             })
         }
@@ -145,6 +175,7 @@ const userLogin = async (req, res) => {
                 message: "password not match"
             })
         }
+
         const token = JWT.sign(
             { id: findUser._id, email: findUser.email, role: findUser.role },
             process.env.JWT_SECRET,
@@ -153,21 +184,18 @@ const userLogin = async (req, res) => {
 
         res.cookie("userToken", token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production', 
-            sameSite: 'Strict', 
-            maxAge: 3600000 + 86400, 
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'Strict',
+            maxAge: 3600000 + 86400,
         })
-
-        // console.log("Cookie set:", token);
 
         res.send("login success")
     } catch (error) {
-
-    }
+        return res.send({
+            status: 500,
+            message: "server error"
+        })
+    } 
 }
-
-
-
-
 
 module.exports = { userRegistration, userLogin, roomAdd, hotelRegistration, adminLogin }
