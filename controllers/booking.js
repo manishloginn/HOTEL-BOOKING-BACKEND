@@ -17,6 +17,20 @@ const bookRoom = async (req, res) => {
     try {
 
         const isAvailable = await isRoomAvailable(roomId, startDate, endDate);
+        if(startDate === endDate){
+           return res.send({
+                status:401,
+                message:"checkin and checkout date can not be same "
+            })
+        }
+
+        if(startDate > endDate){
+            return res.send({
+                status:401,
+                message:"checkout date is not lesser than check in date "
+            })
+        }
+
         if (!isAvailable) {
             return res.send({
                 status: 400,
@@ -24,12 +38,9 @@ const bookRoom = async (req, res) => {
             })
         }
         const room = await roomschema.findById(roomId)
-        // const bookingSchema = await bookingschema()
         let currentDate = new Date(startDate)
         const end = new Date(endDate);
         
-        // currentDate.setUTCHours(11, 0, 0, 0);
-        // end.setUTCHours(10, 59, 59, 0);
 
         if(guest > room.capacity){
             return res.send({
@@ -45,10 +56,17 @@ const bookRoom = async (req, res) => {
 
         const bookingDates = [];
 
+
+
+
         while (currentDate <= end) {
             bookingDates.push(new Date(currentDate));
             currentDate.setDate(currentDate.getDate() + 1);
         }
+
+        let priceInto = (bookingDates.length) - 1
+
+        room.price *= priceInto 
 
         if (existingUserBooking) {
             existingUserBooking.dates.push(...bookingDates);
@@ -85,5 +103,8 @@ const bookRoom = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
+
+
+
 
 module.exports = { bookRoom }
