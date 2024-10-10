@@ -5,7 +5,7 @@ const JWT = require('jsonwebtoken')
 
 const bookRoom = async (req, res) => {
 
-    
+
     const { roomId, startDate, endDate, guest } = req.body
     const token = req.cookies.userToken
 
@@ -15,21 +15,21 @@ const bookRoom = async (req, res) => {
 
 
     try {
+        if (startDate === endDate) {
+            return res.send({
+                status: 401,
+                message: "checkin and checkout date can not be same "
+            })
+        }
+
+        if (startDate > endDate) {
+            return res.send({
+                status: 401,
+                message: "checkout date is not lesser than check in date "
+            })
+        }
 
         const isAvailable = await isRoomAvailable(roomId, startDate, endDate);
-        if(startDate === endDate){
-           return res.send({
-                status:401,
-                message:"checkin and checkout date can not be same "
-            })
-        }
-
-        if(startDate > endDate){
-            return res.send({
-                status:401,
-                message:"checkout date is not lesser than check in date "
-            })
-        }
 
         if (!isAvailable) {
             return res.send({
@@ -40,12 +40,12 @@ const bookRoom = async (req, res) => {
         const room = await roomschema.findById(roomId)
         let currentDate = new Date(startDate)
         const end = new Date(endDate);
-        
 
-        if(guest > room.capacity){
+
+        if (guest > room.capacity) {
             return res.send({
-                status:401,
-                message:`room capacity only ${room.capacity} people`
+                status: 401,
+                message: `room capacity only ${room.capacity} people`
             })
         }
 
@@ -66,7 +66,7 @@ const bookRoom = async (req, res) => {
 
         let priceInto = (bookingDates.length) - 1
 
-        room.price *= priceInto 
+        room.price *= priceInto
 
         if (existingUserBooking) {
             existingUserBooking.dates.push(...bookingDates);
@@ -77,18 +77,18 @@ const bookRoom = async (req, res) => {
             });
         }
 
-        const bookingData =  new bookingschema(
+        const bookingData = new bookingschema(
             {
-                userId:userId,
-                hotelId:room.hotelId,
-                roomId:roomId,
-                checkInDate:startDate,
-                checkOutDate:endDate,
-                guests:guest,
-                totalPrice:room.price
+                userId: userId,
+                hotelId: room.hotelId,
+                roomId: roomId,
+                checkInDate: startDate,
+                checkOutDate: endDate,
+                guests: guest,
+                totalPrice: room.price
             }
         )
-        
+
         await bookingData.save()
         await room.save()
 

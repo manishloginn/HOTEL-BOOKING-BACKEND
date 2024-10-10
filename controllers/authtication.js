@@ -5,6 +5,7 @@ const JWT = require('jsonwebtoken')
 
 
 const { registrationValidator, addHotelValidator, validateAdmin } = require("../utils/registraionvalidator");
+const roomschema = require("../models/roomschema");
 
 
 const hotelRegistration = async (req, res) => {
@@ -38,6 +39,7 @@ const adminLogin = async (req, res) => {
     try {
         validateAdmin({ email, password })
         const findadmin = await hotelschema.findOne({ email: email })
+        console.log(findadmin)
         if (!findadmin) {
             return res.send({
                 status: 401,
@@ -78,11 +80,22 @@ const adminLogin = async (req, res) => {
 
 
 const roomAdd = (req, res) => {
-    const { hotelId, roomtype, price, availability, capacity, amenities } = req.body
-    console.log(req.body)
+    const {  roomtype, price, availability, capacity, amenities } = req.body
+
+    const token = req.cookies.adminToken
+
+    admin = JWT.verify(token, process.env.JWT_SECRET)
+
+    req.hotelId = admin.id
+
+   const hotelId = req.hotelId
+
+    // console.log("roomadd", admin)
+
+    
     try {
         const data = new roomschema({
-            hotelId,
+            hotelId : hotelId,
             roomtype,
             price,
             availability,

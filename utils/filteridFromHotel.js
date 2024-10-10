@@ -12,7 +12,6 @@ const makingroomdata = (hotelFound, roomdata) => {
 
    for (let i = 0; i < filterhotelId.length; i++) {
       for (let j = 0; j <=4 ; j++) {
-
          if(roomsIndex < roomdata.length){
             const room = roomdata[roomsIndex];
             const data = new roomschema({
