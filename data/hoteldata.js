@@ -14,341 +14,328 @@ const hoteldata = [
     "role": "admin"
   },
   {
-    "name": "Sea Breeze Resort",
-    "location": "Goa, India",
-    "description": "A beachside resort with stunning ocean views.",
-    "amenities": ["Beach Access", "Water Sports", "Bar"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Sea+Breeze+Resort+1",
-      "https://dummyimage.com/600x400/000/fff&text=Sea+Breeze+Resort+2"
-    ],
-    "createdAt": "2023-08-05T09:00:00Z",
-    "email": "info@seabreezegoa.com",
-    "password": "12345",
-    "role": "admin"
-  },
-  {
-    "name": "Mountain View Lodge",
-    "location": "Manali, India",
-    "description": "A cozy lodge with breathtaking mountain views.",
-    "amenities": ["Hiking", "Fireplace", "Restaurant"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Mountain+View+Lodge+1",
-      "https://dummyimage.com/600x400/000/fff&text=Mountain+View+Lodge+2"
-    ],
-    "createdAt": "2023-06-15T15:00:00Z",
-    "email": "contact@mountainviewmanali.com",
-    "password": "12345",
-    "role": "admin"
-  },
-  {
-    "name": "Royal Heritage Hotel",
-    "location": "Agra, India",
-    "description": "Experience the luxury of royal hospitality.",
-    "amenities": ["Free Wi-Fi", "Fine Dining", "Spa"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Royal+Heritage+Hotel+1",
-      "https://dummyimage.com/600x400/000/fff&text=Royal+Heritage+Hotel+2"
-    ],
-    "createdAt": "2023-09-01T12:00:00Z",
-    "email": "info@royalheritageagra.com",
-    "password": "12345",
-    "role": "admin"
-  },
-  {
-    "name": "Urban Chic Hotel",
-    "location": "Mumbai, India",
-    "description": "A modern hotel with chic interiors and vibrant nightlife.",
-    "amenities": ["Rooftop Bar", "Gym", "Free Parking"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Urban+Chic+Hotel+1",
-      "https://dummyimage.com/600x400/000/fff&text=Urban+Chic+Hotel+2"
-    ],
-    "createdAt": "2023-08-25T11:00:00Z",
-    "email": "contact@urbanchicmumbai.com",
-    "password": "12345",
-    "role": "admin"
-  },
-  {
-    "name": "Desert Oasis Hotel",
-    "location": "Jaisalmer, India",
-    "description": "A beautiful hotel in the heart of the Thar Desert.",
-    "amenities": ["Camel Rides", "Pool", "Free Breakfast"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Desert+Oasis+Hotel+1",
-      "https://dummyimage.com/600x400/000/fff&text=Desert+Oasis+Hotel+2"
-    ],
-    "createdAt": "2023-05-22T08:00:00Z",
-    "email": "contact@desertoasisjaisalmer.com",
-    "password": "12345",
-    "role": "admin"
-  },
-  {
-    "name": "The Lakeside Inn",
-    "location": "Nainital, India",
-    "description": "A charming inn with a view of the serene lake.",
-    "amenities": ["Boating", "Fishing", "Restaurant"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Lakeside+Inn+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Lakeside+Inn+2"
-    ],
-    "createdAt": "2023-03-18T14:00:00Z",
-    "email": "info@thelakesideinnainital.com",
-    "password": "12345",
-    "role": "admin"
-  },
-  {
-    "name": "Heritage Villa",
-    "location": "Jaipur, India",
-    "description": "A heritage property reflecting traditional Rajasthani architecture.",
-    "amenities": ["Free Wi-Fi", "Traditional Cuisine", "Spa"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Heritage+Villa+1",
-      "https://dummyimage.com/600x400/000/fff&text=Heritage+Villa+2"
-    ],
-    "createdAt": "2023-06-20T13:00:00Z",
-    "email": "info@heritagevillajaipur.com",
-    "password": "12345",
-    "role": "admin"
-  },
-  {
-    "name": "The Cozy Cottage",
-    "location": "Shimla, India",
-    "description": "A warm and welcoming cottage nestled in the mountains.",
-    "amenities": ["Free Wi-Fi", "Garden", "Barbecue Facilities"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Cozy+Cottage+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Cozy+Cottage+2"
-    ],
-    "createdAt": "2023-02-10T11:00:00Z",
-    "email": "contact@cozycottageshimla.com",
-    "password": "12345",
-    "role": "admin"
-  },
-  {
-    "name": "Cityscape Hotel",
-    "location": "Chennai, India",
-    "description": "A modern hotel with a panoramic city view.",
-    "amenities": ["Swimming Pool", "Business Center", "Gym"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Cityscape+Hotel+1",
-      "https://dummyimage.com/600x400/000/fff&text=Cityscape+Hotel+2"
-    ],
-    "createdAt": "2023-07-05T10:30:00Z",
-    "email": "info@cityscapechennai.com",
-    "password": "12345",
-    "role": "admin"
-  },
-  {
-    "name": "The Serenity Resort",
-    "location": "Kumarakom, India",
-    "description": "A tranquil resort overlooking the backwaters.",
-    "amenities": ["Ayurvedic Spa", "Yoga Classes", "Restaurant"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Serenity+Resort+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Serenity+Resort+2"
-    ],
-    "createdAt": "2023-08-15T09:00:00Z",
-    "email": "contact@serenityresortkumarakom.com",
-    "password": "12345",
-    "role": "admin"
-  },
-  {
-    "name": "Royal Palm Resort",
-    "location": "Kerala, India",
-    "description": "A resort surrounded by palm trees and beautiful landscapes.",
-    "amenities": ["Beach Access", "Water Activities", "Spa"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Royal+Palm+Resort+1",
-      "https://dummyimage.com/600x400/000/fff&text=Royal+Palm+Resort+2"
-    ],
-    "createdAt": "2023-05-30T12:00:00Z",
-    "email": "info@royalpalmkerala.com",
-    "password": "12345",
-    "role": "admin"
-  },
-  {
-    "name": "The Art Hotel",
-    "location": "Pune, India",
-    "description": "A hotel showcasing local art and culture.",
-    "amenities": ["Gallery", "Restaurant", "Free Parking"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Art+Hotel+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Art+Hotel+2"
-    ],
-    "createdAt": "2023-04-21T16:00:00Z",
-    "email": "contact@arthotelpune.com",
-    "password": "12345",
-    "role": "admin"
-  },
-  {
-    "name": "Eco Green Resort",
-    "location": "Munnar, India",
-    "description": "An eco-friendly resort nestled in the tea plantations.",
-    "amenities": ["Organic Food", "Hiking", "Spa"],
-    "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Eco+Green+Resort+1",
-      "https://dummyimage.com/600x400/000/fff&text=Eco+Green+Resort+2"
-    ],
-    "createdAt": "2023-03-10T14:00:00Z",
-    "email": "info@ecogreenmunnar.com",
-    "password": "12345",
-    "role": "admin"
-  },
-  {
-    "name": "The Grand Palace",
+    "name": "Hotel Taj Mahal",
     "location": "New Delhi, India",
-    "description": "A luxurious hotel in the heart of the city.",
-    "amenities": ["Free Wi-Fi", "Swimming Pool", "Spa"],
+    "description": "An iconic hotel known for its grandeur.",
+    "amenities": ["Gym", "Free Breakfast", "Airport Shuttle"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Grand+Palace+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Grand+Palace+2"
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Taj+Mahal+1",
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Taj+Mahal+2"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
-    "email": "info@grandpalacenewdelhi.com",
+    "email": "info@hoteltajmahal.com",
     "password": "12345",
     "role": "admin"
   },
   {
-    "name": "Sea Breeze Resort",
-    "location": "Goa, India",
-    "description": "A beachside resort with stunning ocean views.",
-    "amenities": ["Beach Access", "Water Sports", "Bar"],
+    "name": "The Oberoi",
+    "location": "New Delhi, India",
+    "description": "A premium hotel with top-notch services.",
+    "amenities": ["Spa", "Fine Dining", "Valet Parking"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Sea+Breeze+Resort+1",
-      "https://dummyimage.com/600x400/000/fff&text=Sea+Breeze+Resort+2"
+      "https://dummyimage.com/600x400/000/fff&text=The+Oberoi+1",
+      "https://dummyimage.com/600x400/000/fff&text=The+Oberoi+2"
     ],
-    "createdAt": "2023-08-05T09:00:00Z",
-    "email": "info@seabreezegoa.com",
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@oberoihotels.com",
     "password": "12345",
     "role": "admin"
   },
   {
-    "name": "Mountain View Lodge",
-    "location": "Manali, India",
-    "description": "A cozy lodge with breathtaking mountain views.",
-    "amenities": ["Hiking", "Fireplace", "Restaurant"],
+    "name": "Radisson Blu",
+    "location": "New Delhi, India",
+    "description": "A modern hotel with excellent amenities.",
+    "amenities": ["Pool", "Bar", "Conference Rooms"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Mountain+View+Lodge+1",
-      "https://dummyimage.com/600x400/000/fff&text=Mountain+View+Lodge+2"
+      "https://dummyimage.com/600x400/000/fff&text=Radisson+Blu+1",
+      "https://dummyimage.com/600x400/000/fff&text=Radisson+Blu+2"
     ],
-    "createdAt": "2023-06-15T15:00:00Z",
-    "email": "contact@mountainviewmanali.com",
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@radissonblu.com",
     "password": "12345",
     "role": "admin"
   },
   {
-    "name": "Royal Heritage Hotel",
-    "location": "Agra, India",
-    "description": "Experience the luxury of royal hospitality.",
-    "amenities": ["Free Wi-Fi", "Fine Dining", "Spa"],
+    "name": "The Leela Palace",
+    "location": "New Delhi, India",
+    "description": "A five-star hotel with a royal touch.",
+    "amenities": ["Free Wi-Fi", "Spa", "Pool"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Royal+Heritage+Hotel+1",
-      "https://dummyimage.com/600x400/000/fff&text=Royal+Heritage+Hotel+2"
+      "https://dummyimage.com/600x400/000/fff&text=The+Leela+Palace+1",
+      "https://dummyimage.com/600x400/000/fff&text=The+Leela+Palace+2"
     ],
-    "createdAt": "2023-09-01T12:00:00Z",
-    "email": "info@royalheritageagra.com",
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@leela.com",
     "password": "12345",
     "role": "admin"
   },
   {
-    "name": "Urban Chic Hotel",
-    "location": "Mumbai, India",
-    "description": "A modern hotel with chic interiors and vibrant nightlife.",
-    "amenities": ["Rooftop Bar", "Gym", "Free Parking"],
+    "name": "Hotel Radisson",
+    "location": "Noida, India",
+    "description": "A premium hotel offering great services.",
+    "amenities": ["Gym", "Free Breakfast", "Conference Rooms"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Urban+Chic+Hotel+1",
-      "https://dummyimage.com/600x400/000/fff&text=Urban+Chic+Hotel+2"
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Radisson+1",
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Radisson+2"
     ],
-    "createdAt": "2023-08-25T11:00:00Z",
-    "email": "contact@urbanchicmumbai.com",
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@hotelradisson.com",
     "password": "12345",
     "role": "admin"
   },
   {
-    "name": "Desert Oasis Hotel",
-    "location": "Jaisalmer, India",
-    "description": "A beautiful hotel in the heart of the Thar Desert.",
-    "amenities": ["Camel Rides", "Pool", "Free Breakfast"],
+    "name": "The Grand Noida",
+    "location": "Noida, India",
+    "description": "A luxurious hotel in the bustling city.",
+    "amenities": ["Free Wi-Fi", "Swimming Pool", "Spa"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Desert+Oasis+Hotel+1",
-      "https://dummyimage.com/600x400/000/fff&text=Desert+Oasis+Hotel+2"
+      "https://dummyimage.com/600x400/000/fff&text=The+Grand+Noida+1",
+      "https://dummyimage.com/600x400/000/fff&text=The+Grand+Noida+2"
     ],
-    "createdAt": "2023-05-22T08:00:00Z",
-    "email": "contact@desertoasisjaisalmer.com",
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@grandnoida.com",
     "password": "12345",
     "role": "admin"
   },
   {
-    "name": "The Lakeside Inn",
-    "location": "Nainital, India",
-    "description": "A charming inn with a view of the serene lake.",
-    "amenities": ["Boating", "Fishing", "Restaurant"],
+    "name": "The Park Noida",
+    "location": "Noida, India",
+    "description": "A modern hotel with great amenities.",
+    "amenities": ["Free Breakfast", "Spa", "Bar"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Lakeside+Inn+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Lakeside+Inn+2"
+      "https://dummyimage.com/600x400/000/fff&text=The+Park+Noida+1",
+      "https://dummyimage.com/600x400/000/fff&text=The+Park+Noida+2"
     ],
-    "createdAt": "2023-03-18T14:00:00Z",
-    "email": "info@thelakesideinnainital.com",
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info=theparknoida.com",
     "password": "12345",
     "role": "admin"
   },
   {
-    "name": "Heritage Villa",
-    "location": "Jaipur, India",
-    "description": "A heritage property reflecting traditional Rajasthani architecture.",
-    "amenities": ["Free Wi-Fi", "Traditional Cuisine", "Spa"],
+    "name": "Hotel Clarks",
+    "location": "Noida, India",
+    "description": "An elegant hotel with premium services.",
+    "amenities": ["Free Wi-Fi", "Conference Rooms", "Airport Shuttle"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Heritage+Villa+1",
-      "https://dummyimage.com/600x400/000/fff&text=Heritage+Villa+2"
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Clarks+1",
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Clarks+2"
     ],
-    "createdAt": "2023-06-20T13:00:00Z",
-    "email": "info@heritagevillajaipur.com",
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@clarkshotels.com",
     "password": "12345",
     "role": "admin"
   },
   {
-    "name": "The Cozy Cottage",
-    "location": "Shimla, India",
-    "description": "A warm and welcoming cottage nestled in the mountains.",
-    "amenities": ["Free Wi-Fi", "Garden", "Barbecue Facilities"],
+    "name": "Hotel Novotel",
+    "location": "Pune, India",
+    "description": "A modern hotel with exceptional facilities.",
+    "amenities": ["Pool", "Gym", "Free Wi-Fi"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Cozy+Cottage+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Cozy+Cottage+2"
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Novotel+1",
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Novotel+2"
     ],
-    "createdAt": "2023-02-10T11:00:00Z",
-    "email": "contact@cozycottageshimla.com",
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@novotelpune.com",
     "password": "12345",
     "role": "admin"
   },
   {
-    "name": "Cityscape Hotel",
-    "location": "Chennai, India",
-    "description": "A modern hotel with a panoramic city view.",
-    "amenities": ["Swimming Pool", "Business Center", "Gym"],
+    "name": "The Westin",
+    "location": "Pune, India",
+    "description": "A luxurious hotel in a serene setting.",
+    "amenities": ["Spa", "Fine Dining", "Pool"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Cityscape+Hotel+1",
-      "https://dummyimage.com/600x400/000/fff&text=Cityscape+Hotel+2"
+      "https://dummyimage.com/600x400/000/fff&text=The+Westin+1",
+      "https://dummyimage.com/600x400/000/fff&text=The+Westin+2"
     ],
-    "createdAt": "2023-07-05T10:30:00Z",
-    "email": "info@cityscapechennai.com",
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@westinpune.com",
     "password": "12345",
     "role": "admin"
   },
   {
-    "name": "The Serenity Resort",
-    "location": "Kumarakom, India",
-    "description": "A tranquil resort overlooking the backwaters.",
-    "amenities": ["Ayurvedic Spa", "Yoga Classes", "Restaurant"],
+    "name": "Hyatt Pune",
+    "location": "Pune, India",
+    "description": "A contemporary hotel with modern amenities.",
+    "amenities": ["Gym", "Free Breakfast", "Bar"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Serenity+Resort+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Serenity+Resort+2"
+      "https://dummyimage.com/600x400/000/fff&text=Hyatt+Pune+1",
+      "https://dummyimage.com/600x400/000/fff&text=Hyatt+Pune+2"
     ],
-    "createdAt": "2023-08-15T09:00:00Z",
-    "email": "contact@serenityresortkumarakom.com",
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@hyattpune.com",
     "password": "12345",
     "role": "admin"
   },
-];  
+  {
+    "name": "Radisson Pune",
+    "location": "Pune, India",
+    "description": "A stylish hotel with elegant rooms.",
+    "amenities": ["Spa", "Pool", "Restaurant"],
+    "images": [
+      "https://dummyimage.com/600x400/000/fff&text=Radisson+Pune+1",
+      "https://dummyimage.com/600x400/000/fff&text=Radisson+Pune+2"
+    ],
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@radissonpune.com",
+    "password": "12345",
+    "role": "admin"
+  },
+  {
+    "name": "The Crown Plaza",
+    "location": "Pune, India",
+    "description": "An upscale hotel with premium services.",
+    "amenities": ["Free Wi-Fi", "Conference Rooms", "Gym"],
+    "images": [
+      "https://dummyimage.com/600x400/000/fff&text=The+Crown+Plaza+1",
+      "https://dummyimage.com/600x400/000/fff&text=The+Crown+Plaza+2"
+    ],
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@crownplazapune.com",
+    "password": "12345",
+    "role": "admin"
+  },
+  {
+    "name": "Hotel Radisson",
+    "location": "Bangalore, India",
+    "description": "A premium hotel with top-notch services.",
+    "amenities": ["Spa", "Free Breakfast", "Airport Shuttle"],
+    "images": [
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Radisson+Bangalore+1",
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Radisson+Bangalore+2"
+    ],
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@radissonbangalore.com",
+    "password": "12345",
+    "role": "admin"
+  },
+  {
+    "name": "The Leela Palace Bangalore",
+    "location": "Bangalore, India",
+    "description": "A luxurious hotel with a royal touch.",
+    "amenities": ["Free Wi-Fi", "Spa", "Pool"],
+    "images": [
+      "https://dummyimage.com/600x400/000/fff&text=The+Leela+Palace+Bangalore+1",
+      "https://dummyimage.com/600x400/000/fff&text=The+Leela+Palace+Bangalore+2"
+    ],
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@leelapalacebangalore.com",
+    "password": "12345",
+    "role": "admin"
+  },
+  {
+    "name": "Hotel Ritz",
+    "location": "Bangalore, India",
+    "description": "A chic hotel with modern amenities.",
+    "amenities": ["Bar", "Free Breakfast", "Gym"],
+    "images": [
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Ritz+1",
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Ritz+2"
+    ],
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@hotelritzbangalore.com",
+    "password": "12345",
+    "role": "admin"
+  },
+  {
+    "name": "The Oberoi Bangalore",
+    "location": "Bangalore, India",
+    "description": "A luxurious hotel with top-notch services.",
+    "amenities": ["Spa", "Fine Dining", "Valet Parking"],
+    "images": [
+      "https://dummyimage.com/600x400/000/fff&text=The+Oberoi+Bangalore+1",
+      "https://dummyimage.com/600x400/000/fff&text=The+Oberoi+Bangalore+2"
+    ],
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@oberoibangalore.com",
+    "password": "12345",
+    "role": "admin"
+  },
+  {
+    "name": "Hotel Indigo",
+    "location": "Bangalore, India",
+    "description": "A modern hotel with great amenities.",
+    "amenities": ["Free Wi-Fi", "Spa", "Pool"],
+    "images": [
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Indigo+1",
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Indigo+2"
+    ],
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@hotelindigobangalore.com",
+    "password": "12345",
+    "role": "admin"
+  },
+  {
+    "name": "Hotel Hilltop",
+    "location": "Uttarakhand, India",
+    "description": "A serene hotel amidst nature.",
+    "amenities": ["Free Breakfast", "Spa", "Hiking Trails"],
+    "images": [
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Hilltop+1",
+      "https://dummyimage.com/600x400/000/fff&text=Hotel+Hilltop+2"
+    ],
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@hilltoputtarakhand.com",
+    "password": "12345",
+    "role": "admin"
+  },
+  {
+    "name": "Mountain Resort",
+    "location": "Uttarakhand, India",
+    "description": "A beautiful resort with stunning views.",
+    "amenities": ["Free Wi-Fi", "Spa", "Outdoor Activities"],
+    "images": [
+      "https://dummyimage.com/600x400/000/fff&text=Mountain+Resort+1",
+      "https://dummyimage.com/600x400/000/fff&text=Mountain+Resort+2"
+    ],
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@mountainresortuttarakhand.com",
+    "password": "12345",
+    "role": "admin"
+  },
+  {
+    "name": "River Valley Inn",
+    "location": "Uttarakhand, India",
+    "description": "A tranquil hotel by the river.",
+    "amenities": ["Free Wi-Fi", "Fishing", "Kayaking"],
+    "images": [
+      "https://dummyimage.com/600x400/000/fff&text=River+Valley+Inn+1",
+      "https://dummyimage.com/600x400/000/fff&text=River+Valley+Inn+2"
+    ],
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@rivervalleyninn.com",
+    "password": "12345",
+    "role": "admin"
+  },
+  {
+    "name": "Himalayan Retreat",
+    "location": "Uttarakhand, India",
+    "description": "A cozy retreat surrounded by mountains.",
+    "amenities": ["Free Wi-Fi", "Spa", "Yoga Classes"],
+    "images": [
+      "https://dummyimage.com/600x400/000/fff&text=Himalayan+Retreat+1",
+      "https://dummyimage.com/600x400/000/fff&text=Himalayan+Retreat+2"
+    ],
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@himalayanretreat.com",
+    "password": "12345",
+    "role": "admin"
+  },
+  {
+    "name": "Nature's Paradise",
+    "location": "Uttarakhand, India",
+    "description": "A beautiful place to relax and unwind.",
+    "amenities": ["Free Wi-Fi", "Nature Trails", "Picnic Areas"],
+    "images": [
+      "https://dummyimage.com/600x400/000/fff&text=Nature's+Paradise+1",
+      "https://dummyimage.com/600x400/000/fff&text=Nature's+Paradise+2"
+    ],
+    "createdAt": "2023-07-12T10:00:00Z",
+    "email": "info@naturesparadise.com",
+    "password": "12345",
+    "role": "admin"
+  }
+]
+
 
   module.exports= hoteldata
