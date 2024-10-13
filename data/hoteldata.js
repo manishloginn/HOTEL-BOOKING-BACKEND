@@ -11,7 +11,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@grandpalacenewdelhi.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 900
   },
   {
     "name": "Hotel Taj Mahal",
@@ -25,7 +26,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@hoteltajmahal.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1500
   },
   {
     "name": "The Oberoi",
@@ -39,7 +41,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@oberoihotels.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1200
   },
   {
     "name": "Radisson Blu",
@@ -53,7 +56,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@radissonblu.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1800
   },
   {
     "name": "The Leela Palace",
@@ -67,7 +71,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@leela.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 600
   },
   {
     "name": "Hotel Radisson",
@@ -81,7 +86,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@hotelradisson.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1100
   },
   {
     "name": "The Grand Noida",
@@ -95,7 +101,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@grandnoida.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1700
   },
   {
     "name": "The Park Noida",
@@ -109,7 +116,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info=theparknoida.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 900
   },
   {
     "name": "Hotel Clarks",
@@ -123,7 +131,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@clarkshotels.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1050
   },
   {
     "name": "Hotel Novotel",
@@ -137,7 +146,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@novotelpune.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1600
   },
   {
     "name": "The Westin",
@@ -151,7 +161,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@westinpune.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 2000
   },
   {
     "name": "Hyatt Pune",
@@ -165,7 +176,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@hyattpune.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1300
   },
   {
     "name": "Radisson Pune",
@@ -179,7 +191,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@radissonpune.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 750
   },
   {
     "name": "The Crown Plaza",
@@ -193,7 +206,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@crownplazapune.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 950
   },
   {
     "name": "Hotel Radisson",
@@ -207,7 +221,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@radissonbangalore.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1050
   },
   {
     "name": "The Leela Palace Bangalore",
@@ -221,7 +236,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@leelapalacebangalore.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1800
   },
   {
     "name": "Hotel Ritz",
@@ -235,7 +251,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@hotelritzbangalore.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1650
   },
   {
     "name": "The Oberoi Bangalore",
@@ -249,7 +266,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@oberoibangalore.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1100
   },
   {
     "name": "Hotel Indigo",
@@ -263,7 +281,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@hotelindigobangalore.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1900
   },
   {
     "name": "Hotel Hilltop",
@@ -277,7 +296,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@hilltoputtarakhand.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 1650
   },
   {
     "name": "Mountain Resort",
@@ -291,7 +311,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@mountainresortuttarakhand.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 850
   },
   {
     "name": "River Valley Inn",
@@ -305,7 +326,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@rivervalleyninn.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 400
   },
   {
     "name": "Himalayan Retreat",
@@ -319,7 +341,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@himalayanretreat.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 450
   },
   {
     "name": "Nature's Paradise",
@@ -333,7 +356,8 @@ const hoteldata = [
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@naturesparadise.com",
     "password": "12345",
-    "role": "admin"
+    "role": "admin",
+    "price": 550
   }
 ]
 

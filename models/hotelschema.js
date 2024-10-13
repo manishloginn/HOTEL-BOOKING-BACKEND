@@ -39,6 +39,7 @@ const hotelschema = new Schema({
     },
     amenities : [String],
     images: [String],
+  
     createdAt: {type:Date, default: Date.now},
     email:{
         type:String,
@@ -48,7 +49,10 @@ const hotelschema = new Schema({
         type:String,
         required:true
     }, 
-    role: { type: String, required:true }
+    role: { type: String, required:true },
+    price:{
+        type:Number
+    }
 })
 
 module.exports = mongoose.model('hotel', hotelschema)

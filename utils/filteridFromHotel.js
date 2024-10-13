@@ -17,7 +17,7 @@ const makingroomdata = (hotelFound, roomdata) => {
             const data = new roomschema({
                hotelId: filterhotelId[i].hotelId.toString(),
                roomtype: room.roomtype,
-               price: room.price,
+               // price: room.price,
                availability: room.availability,
                capacity: room.capacity,
                amenities: room.amenities,

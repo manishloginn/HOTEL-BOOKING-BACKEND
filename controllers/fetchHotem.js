@@ -30,9 +30,19 @@ const fetchHotel = async (req, res) => {
 const selectHotel = async (req, res) => {
     const { hotelId } = req.body
 
+    if(!hotelId){
+       return res.send({
+            status:400,
+            message:"hotelId not found"
+        })
+    }
+
     try {
         hotelIdValidator(hotelId)
         const findhotel = await roomschema.find({ hotelId: hotelId })
+        const hotelSearch = await hotelschema.findById({_id:hotelId})
+
+        console.log(hotelSearch)
         if (!findhotel) {
             return res.send({
                 status: 500,
@@ -43,7 +53,8 @@ const selectHotel = async (req, res) => {
         res.send({
             status: 201,
             message: "please select room",
-            data: findhotel
+            data: findhotel,
+            hotelDetail:hotelSearch
         })
 
     } catch (error) {

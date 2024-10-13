@@ -11,10 +11,6 @@ const roomschema = new Schema({
         type: String,
         required: true,
     },
-    price: {
-        type: Number,
-        require: true
-    },
     availability: {
         type: Boolean,
         default: true
@@ -37,13 +33,7 @@ const roomschema = new Schema({
         }]
 
 
-    // bookedDates:[
-    // ],
-    // user: {
-    //     type:mongoose.Schema.Types.ObjectId,
-    //     ref:"users", 
-    //     required:true
-    // }
+   
 }, { strict: false })
 
 // 
