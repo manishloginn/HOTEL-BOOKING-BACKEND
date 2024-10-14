@@ -5,8 +5,8 @@ const hoteldata = [
     "description": "A luxurious hotel in the heart of the city.",
     "amenities": ["Free Wi-Fi", "Swimming Pool", "Spa"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Grand+Palace+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Grand+Palace+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxzP03q4rquRyQ6pOJAGIAkZKWVX718iXXQ&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSVK0d8e888P1Ln7CGDCHNgHRPJFz6b9dftg&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@grandpalacenewdelhi.com",
@@ -20,8 +20,8 @@ const hoteldata = [
     "description": "An iconic hotel known for its grandeur.",
     "amenities": ["Gym", "Free Breakfast", "Airport Shuttle"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Taj+Mahal+1",
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Taj+Mahal+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrEpcA_5AX4kJy96Y9TFHp_FUUdNr1_KwkpA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ4v7BFvtTaS_NBsocvtBJorrSupkA6la11g&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@hoteltajmahal.com",
@@ -35,8 +35,8 @@ const hoteldata = [
     "description": "A premium hotel with top-notch services.",
     "amenities": ["Spa", "Fine Dining", "Valet Parking"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Oberoi+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Oberoi+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwOP8sFcTn-l6HFgkFXwq61WiZ3thMyQuHZg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGEt8kx1WiYYmjg57P1DF7uqDIxFSNfcCJUg&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@oberoihotels.com",
@@ -50,8 +50,8 @@ const hoteldata = [
     "description": "A modern hotel with excellent amenities.",
     "amenities": ["Pool", "Bar", "Conference Rooms"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Radisson+Blu+1",
-      "https://dummyimage.com/600x400/000/fff&text=Radisson+Blu+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkqFe6vwl_U9yIWPcFpEmqT8LUkXOILQWkyQ&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkoOdtyD2JNVKrlxTXT5HU2J__AUOpu41B_A&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@radissonblu.com",
@@ -65,8 +65,8 @@ const hoteldata = [
     "description": "A five-star hotel with a royal touch.",
     "amenities": ["Free Wi-Fi", "Spa", "Pool"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Leela+Palace+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Leela+Palace+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYcEkz5QKB4tAfyzvmNeA8Ulazeu_M_so5dA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9vcOhsCzZ-t_qvkqXzeRivhQgVKrAW59BnQ&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@leela.com",
@@ -80,8 +80,8 @@ const hoteldata = [
     "description": "A premium hotel offering great services.",
     "amenities": ["Gym", "Free Breakfast", "Conference Rooms"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Radisson+1",
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Radisson+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREYbacMCjJmoDATroA_6Qi276Hpm3UNRGl7A&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpf1XhkPVfQIjBXErAEWXm4nVTYb-JlYDySw&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@hotelradisson.com",
@@ -95,8 +95,8 @@ const hoteldata = [
     "description": "A luxurious hotel in the bustling city.",
     "amenities": ["Free Wi-Fi", "Swimming Pool", "Spa"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Grand+Noida+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Grand+Noida+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1-PrhwYUbv4c6qMybFyU4B2d7gjZHZYpmtQ&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG4aHyPJfM4w6jrsRFiHClyJhCUtOTNTHi7A&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@grandnoida.com",
@@ -110,8 +110,8 @@ const hoteldata = [
     "description": "A modern hotel with great amenities.",
     "amenities": ["Free Breakfast", "Spa", "Bar"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Park+Noida+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Park+Noida+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5DHyZfgvgOgSVXOJfQb1mIg1yFwq9D15WTA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOK0Xku6aC6clUsqotrZvNGTqN8J6Aweh1Qg&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info=theparknoida.com",
@@ -125,8 +125,8 @@ const hoteldata = [
     "description": "An elegant hotel with premium services.",
     "amenities": ["Free Wi-Fi", "Conference Rooms", "Airport Shuttle"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Clarks+1",
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Clarks+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnDGv7RdZiiFi6o9dnbh_DkHdFI32DonAu2w&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5gaQaTzpGzP3C7mWeG3ZqRDP5zmRcR5AhUg&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@clarkshotels.com",
@@ -140,8 +140,8 @@ const hoteldata = [
     "description": "A modern hotel with exceptional facilities.",
     "amenities": ["Pool", "Gym", "Free Wi-Fi"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Novotel+1",
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Novotel+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7cyOZKsW7YMIdu1dJ5umOPG4AWUHDeKJomw&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPAT1wVDjgHnr8UBVRkzX4v3bJcKVzEDVE-Q&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@novotelpune.com",
@@ -155,8 +155,8 @@ const hoteldata = [
     "description": "A luxurious hotel in a serene setting.",
     "amenities": ["Spa", "Fine Dining", "Pool"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Westin+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Westin+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrlK_o8BVbkU5UsF7o4g9nYG9B_YW3W6N0nw&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMLNSwMTFdKKStXuOA91CTUwL3vqaehi-8DQ&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@westinpune.com",
@@ -170,8 +170,8 @@ const hoteldata = [
     "description": "A contemporary hotel with modern amenities.",
     "amenities": ["Gym", "Free Breakfast", "Bar"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Hyatt+Pune+1",
-      "https://dummyimage.com/600x400/000/fff&text=Hyatt+Pune+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4JawQgWsVUreAT4L253McrMyMD0M0WzKP2g&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyPIM1_nR7KfmiXJ1Qaxc9L8gkaB4ZkG3QtA&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@hyattpune.com",
@@ -185,8 +185,8 @@ const hoteldata = [
     "description": "A stylish hotel with elegant rooms.",
     "amenities": ["Spa", "Pool", "Restaurant"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Radisson+Pune+1",
-      "https://dummyimage.com/600x400/000/fff&text=Radisson+Pune+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFqG9n1LEeDkEdw_i-A5UHEdiUutjbTgugfA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR68kG86j-LzLd6nJWLJBZiquCHMb6WOcaJdQ&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@radissonpune.com",
@@ -200,8 +200,8 @@ const hoteldata = [
     "description": "An upscale hotel with premium services.",
     "amenities": ["Free Wi-Fi", "Conference Rooms", "Gym"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Crown+Plaza+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Crown+Plaza+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYpS1aiPDRWI4KChr1MguxIuXKJfItNZG-eg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRaclyxC_TobQOAGfX6WqyjASa9AI8bVHBVQ&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@crownplazapune.com",
@@ -215,8 +215,8 @@ const hoteldata = [
     "description": "A premium hotel with top-notch services.",
     "amenities": ["Spa", "Free Breakfast", "Airport Shuttle"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Radisson+Bangalore+1",
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Radisson+Bangalore+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcvTzmDK0kjEH7VGhDIaINTVjo9SSEGUG4hQ&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPusUWJzF-u95ovt-SVD2QWY5pWAK2pOWc3w&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@radissonbangalore.com",
@@ -230,8 +230,8 @@ const hoteldata = [
     "description": "A luxurious hotel with a royal touch.",
     "amenities": ["Free Wi-Fi", "Spa", "Pool"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Leela+Palace+Bangalore+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Leela+Palace+Bangalore+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0sh29di2WOzw-FlztZk3YB5wsgulPUkxaaA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiEH_WQPPFG7pnyVXu3FOKwnU8BjMUymnVlQ&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@leelapalacebangalore.com",
@@ -245,8 +245,8 @@ const hoteldata = [
     "description": "A chic hotel with modern amenities.",
     "amenities": ["Bar", "Free Breakfast", "Gym"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Ritz+1",
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Ritz+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM1nmVsCDMSJzmW243x-fZ7PYL--2uCTyqJw&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqMGtPJEdwQpiy42W5J2B-V2BqkEUIrlAESA&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@hotelritzbangalore.com",
@@ -260,8 +260,8 @@ const hoteldata = [
     "description": "A luxurious hotel with top-notch services.",
     "amenities": ["Spa", "Fine Dining", "Valet Parking"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=The+Oberoi+Bangalore+1",
-      "https://dummyimage.com/600x400/000/fff&text=The+Oberoi+Bangalore+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROfviKqU0A-s9YIyPFzFKv3yp6WLlyFZDG5Q&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe2cvKU-WdAAPIx13kf0u55eBry7AMWJdMmQ&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@oberoibangalore.com",
@@ -275,8 +275,8 @@ const hoteldata = [
     "description": "A modern hotel with great amenities.",
     "amenities": ["Free Wi-Fi", "Spa", "Pool"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Indigo+1",
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Indigo+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6TZCbN06d3L6fcdpVZDAWBEZoOT1MKrwVKA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZjCLDRfgyhMrzDG3Z7kdVJc-MAi2jV2RZvQ&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@hotelindigobangalore.com",
@@ -290,8 +290,8 @@ const hoteldata = [
     "description": "A serene hotel amidst nature.",
     "amenities": ["Free Breakfast", "Spa", "Hiking Trails"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Hilltop+1",
-      "https://dummyimage.com/600x400/000/fff&text=Hotel+Hilltop+2"
+      "https://www.linkhotelloughborough.co.uk/assets/img/quad-family-rooms.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThVZ3EuZpR-t7mThxRru46jYUUHMoSFE4xMw&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@hilltoputtarakhand.com",
@@ -305,8 +305,8 @@ const hoteldata = [
     "description": "A beautiful resort with stunning views.",
     "amenities": ["Free Wi-Fi", "Spa", "Outdoor Activities"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Mountain+Resort+1",
-      "https://dummyimage.com/600x400/000/fff&text=Mountain+Resort+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTInf3760h1yi766D6e0pXi-UpnZzR_18yXA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThVHWPdcj6Z4R3-AWJBH13vzfpwF0cTTqFWw&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@mountainresortuttarakhand.com",
@@ -320,8 +320,8 @@ const hoteldata = [
     "description": "A tranquil hotel by the river.",
     "amenities": ["Free Wi-Fi", "Fishing", "Kayaking"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=River+Valley+Inn+1",
-      "https://dummyimage.com/600x400/000/fff&text=River+Valley+Inn+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdxx2bSUqXarJka9OrjfJLG50QkUSTXNbtug&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR52tc8sXX9aAnL-N-5uTMTk9I5J6sdldy-A&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@rivervalleyninn.com",
@@ -335,8 +335,8 @@ const hoteldata = [
     "description": "A cozy retreat surrounded by mountains.",
     "amenities": ["Free Wi-Fi", "Spa", "Yoga Classes"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Himalayan+Retreat+1",
-      "https://dummyimage.com/600x400/000/fff&text=Himalayan+Retreat+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBlLdpJXgfXm-xitmfqUjiyW_mR4tDNCJ6Ag&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd2V-G6YNcG43ngctLxRRPSwuflDKDSX7wFA&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@himalayanretreat.com",
@@ -350,8 +350,8 @@ const hoteldata = [
     "description": "A beautiful place to relax and unwind.",
     "amenities": ["Free Wi-Fi", "Nature Trails", "Picnic Areas"],
     "images": [
-      "https://dummyimage.com/600x400/000/fff&text=Nature's+Paradise+1",
-      "https://dummyimage.com/600x400/000/fff&text=Nature's+Paradise+2"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREeQiach9w7tV_dWyaBG5Ase17zfmaukPD3A&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw43n8fjeypqG_pBJbrn5dZvamwiTqa3Qj1Q&s"
     ],
     "createdAt": "2023-07-12T10:00:00Z",
     "email": "info@naturesparadise.com",
