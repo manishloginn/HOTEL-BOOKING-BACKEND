@@ -118,8 +118,7 @@ const userRegistration = async (req, res) => {
         await registrationValidator({ username, password, email, role });
         let findindb = await userschema.findOne({ email });
         if (findindb) {
-            return res.send({
-                status: 401,
+            return res.status(401).json({
                 message: "User already exists"
             });
         }
@@ -144,8 +143,7 @@ const userLogin = async (req, res) => {
     try {
         const findUser = await userschema.findOne({ email: email })
         if (!findUser) {
-            return res.send({
-                status: 200,
+            return res.status(401).json({
                 message: "user Not found"
             })
         }
