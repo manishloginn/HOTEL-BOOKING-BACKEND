@@ -3,7 +3,7 @@ const roomschema = require("../models/roomschema");
 
 
 const makingroomdata = (hotelFound, roomdata) => {
-   console.log("hittt")
+   // console.log("hittt")
 
    const uniqueIds = new Set(hotelFound.map((hotelid) => hotelid._id.toString()))
    const filterhotelId = Array.from(uniqueIds).map(id => ({ hotelId: id }))
@@ -30,7 +30,7 @@ const makingroomdata = (hotelFound, roomdata) => {
                bookedDates:[],
             });
             resultData.push(data);
-            console.log(data);
+            // console.log(data);
             roomsIndex++;
          } else {
             break;

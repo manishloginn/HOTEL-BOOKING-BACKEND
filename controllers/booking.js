@@ -1,13 +1,17 @@
 const bookingschema = require("../models/bookingschema");
+const hotelschema = require("../models/hotelschema");
 const roomschema = require("../models/roomschema");
 const { isRoomAvailable } = require("../utils/isRoomAvailable");
 const JWT = require('jsonwebtoken')
 
 const bookRoom = async (req, res) => {
 
+    const {hotelId, roomId, startDate, endDate, guest } = req.body
+    const authHeader = req.headers.authorization;
 
-    const { roomId, startDate, endDate, guest } = req.body
-    const token = req.cookies.userToken
+    const token = authHeader.split(' ')[1];
+
+    console.log("token",token)
 
     user = JWT.verify(token, process.env.JWT_SECRET)
     req.userId = user.id;
@@ -38,8 +42,10 @@ const bookRoom = async (req, res) => {
             })
         }
         const room = await roomschema.findById(roomId)
+        const hotel = await hotelschema.findById(hotelId)
         let currentDate = new Date(startDate)
         const end = new Date(endDate);
+
 
 
         if (guest > room.capacity) {
@@ -61,9 +67,10 @@ const bookRoom = async (req, res) => {
             currentDate.setDate(currentDate.getDate() + 1);
         }
 
+        // console.log(hotel)
         let priceInto = (bookingDates.length) - 1
 
-        room.price *= priceInto
+        hotel.price *= priceInto
 
         if (existingUserBooking) {
             existingUserBooking.dates.push(...bookingDates);
@@ -82,9 +89,12 @@ const bookRoom = async (req, res) => {
                 checkInDate: startDate,
                 checkOutDate: endDate,
                 guests: guest,
-                totalPrice: room.price
+                totalPrice: hotel.price
             }
         )
+
+
+        console.log(bookingData)
 
         await bookingData.save()
         await room.save()

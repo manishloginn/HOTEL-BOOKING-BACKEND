@@ -1,14 +1,19 @@
 const JWT = require('jsonwebtoken')
 
 const authenticateUser = ( req, res, next ) => {
-    const token = req.cookies.userToken;
+    const authHeader = req.headers.authorization;
 
-    if(!token) {
-        return res.send({
-            status:401,
-            message: 'User not authenticated'
-        })
-    }
+
+    // console.log(token)
+
+    // if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    //     return res.status(401).json({
+    //         message: 'User not authenticated',
+    //     });
+    // }
+
+    const token = authHeader.split(' ')[1];
+
 
     try {
             const verified = JWT.verify(token, process.env.JWT_SECRET)

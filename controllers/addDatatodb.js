@@ -8,7 +8,7 @@ const hoteldata = require('../data/hoteldata');
 
 
 const insertData = async (req, res) => {
-    console.log("hi")
+    // console.log("hi")
     try {
         const delet = await hotelschema.deleteMany();
         const data = await hotelschema.insertMany(hoteldata);

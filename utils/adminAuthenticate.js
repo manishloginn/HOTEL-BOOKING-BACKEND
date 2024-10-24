@@ -4,7 +4,7 @@ const adminAuthenticate = (req, res, next) => {
 
     const token = req.cookies.adminToken
 
-    console.log(token)
+    // console.log(token)
 
     if(!token){
         return res.send({
@@ -16,7 +16,7 @@ const adminAuthenticate = (req, res, next) => {
     try {
         const verify = JWT.verify(token, process.env.JWT_SECRET)
 
-        console.log(verify)
+        // console.log(verify)
 
         req.adminUser = verify
 
