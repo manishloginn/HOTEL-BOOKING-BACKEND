@@ -56,9 +56,6 @@ const bookRoom = async (req, res) => {
 
         const bookingDates = [];
 
-
-
-
         while (currentDate <= end) {
             bookingDates.push(new Date(currentDate));
             currentDate.setDate(currentDate.getDate() + 1);

@@ -66,4 +66,37 @@ const selectHotel = async (req, res) => {
 
 }
 
-module.exports = { fetchHotel, selectHotel }
+
+const fetchRoomInHotel = async (req, res) => {
+    const {hotelId} = req.body;
+    console.log(hotelId)
+
+    if(!hotelId){
+        return res.send({
+            status:401,
+            message:"Plesase select valid hotel"
+        })
+    }
+
+    try {
+        const result = await roomschema.find({hotelId:hotelId})
+        if(!result) {
+            return res.send({
+                status:500,
+                message:"No Rooms Available"
+            })
+        }
+        console.log(result)
+
+        res.send({
+            status:200,
+            message:"Rooms Fetch",
+            data:result
+        })
+        
+    } catch (error) {
+        console.log("Error", error)
+    }
+
+}
+module.exports = { fetchHotel, selectHotel, fetchRoomInHotel }
