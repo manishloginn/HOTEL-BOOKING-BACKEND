@@ -169,11 +169,12 @@ const userLogin = async (req, res) => {
             maxAge: 3600000 + 86400, 
         })
 
-        // console.log("Cookie set:", token);
+        console.log(findUser);
 
         res.status(200).json({
             message: "login Success",
-            token: token
+            token: token,
+            findUser
         })
     } catch (error) {
         return res.status(500).json(error)
