@@ -9,14 +9,16 @@ const bookRoom = async (req, res) => {
     const {hotelId, roomId, startDate, endDate, guest } = req.body
     const authHeader = req.headers.authorization;
 
+    // console.log(hotelId)
     const token = authHeader.split(' ')[1];
 
-    console.log("token",token)
+    console.log("token", token)
 
     user = JWT.verify(token, process.env.JWT_SECRET)
     req.userId = user.id;
     const userId = req.userId
 
+    console.log(user)
 
     try {
         if (startDate === endDate) {
@@ -70,7 +72,8 @@ const bookRoom = async (req, res) => {
         // console.log(hotel)
         let priceInto = (bookingDates.length) - 1
 
-        hotel.price *= priceInto
+
+        hotel.price *= priceInto 
 
         if (existingUserBooking) {
             existingUserBooking.dates.push(...bookingDates);
