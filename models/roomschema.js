@@ -19,20 +19,7 @@ const roomschema = new Schema({
         type: Number,
         required: true
     },
-    amenities: [String],
-
-    bookedDates: [
-        {
-            user: {
-                type: String,
-                // ref: 'user', 
-            },
-            dates: [
-              
-            ]
-        }]
-
-
+    amenities: [String]
    
 }, { strict: false })
 

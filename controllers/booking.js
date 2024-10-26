@@ -6,20 +6,31 @@ const JWT = require('jsonwebtoken')
 
 const bookRoom = async (req, res) => {
 
-    const {hotelId, roomId, startDate, endDate, guest } = req.body
+    const { hotelId, roomId, startDate, endDate, guest } = req.body
     const authHeader = req.headers.authorization;
 
-    // console.log(hotelId)
+
+    let checkInDate = new Date(startDate);
+    let checkoutDate = new Date(endDate);
+
+    checkInDate.setHours(11, 0, 0)
+    checkoutDate.setHours(10,59,59)
+
+    const CheckinDateUTC = new Date(checkInDate.getTime() - (checkInDate.getTimezoneOffset()*60000));
+    const CheckoutDateUTC = new Date(checkoutDate.getTime() - (checkoutDate.getTimezoneOffset() * 60000))
+
+
+
+
     const token = authHeader.split(' ')[1];
+
+
 
     console.log("token", token)
 
     user = JWT.verify(token, process.env.JWT_SECRET)
     req.userId = user.id;
     const userId = req.userId
-
-    console.log(user)
-
     try {
         if (startDate === endDate) {
             return res.send({
@@ -35,7 +46,9 @@ const bookRoom = async (req, res) => {
             })
         }
 
-        const isAvailable = await isRoomAvailable(roomId, startDate, endDate);
+        const isAvailable = await isRoomAvailable(roomId, CheckinDateUTC, CheckoutDateUTC);
+
+        console.log(isRoomAvailable)
 
         if (!isAvailable) {
             return res.send({
@@ -45,8 +58,6 @@ const bookRoom = async (req, res) => {
         }
         const room = await roomschema.findById(roomId)
         const hotel = await hotelschema.findById(hotelId)
-        let currentDate = new Date(startDate)
-        const end = new Date(endDate);
 
 
 
@@ -58,46 +69,55 @@ const bookRoom = async (req, res) => {
         }
 
 
-        let existingUserBooking = room.bookedDates.find(
-            (booking) => booking.user.toString() === userId.toString()
-        );
+        // let existingUserBooking = room.bookedDates.find(
+        //     (booking) => booking.user.toString() === userId.toString()
+        // );
 
-        const bookingDates = [];
+        // const bookingDates = [];
 
-        while (currentDate <= end) {
-            bookingDates.push(new Date(currentDate));
-            currentDate.setDate(currentDate.getDate() + 1);
-        }
+        // while (currentDate <= end) {
+        //     bookingDates.push(new Date(currentDate));
+        //     currentDate.setDate(currentDate.getDate() + 1);
+        // }
 
-        // console.log(hotel)
-        let priceInto = (bookingDates.length) - 1
+        // // console.log(hotel)
+        // let priceInto = (bookingDates.length) - 1
 
+        // let sum = (startDate + endDate) - 1
 
-        hotel.price *= priceInto 
+        let diffrenceintime = checkoutDate.getTime() - checkInDate.getTime();
 
-        if (existingUserBooking) {
-            existingUserBooking.dates.push(...bookingDates);
-        } else {
-            room.bookedDates.push({
-                user: userId,
-                dates: bookingDates,
-            });
-        }
+        let differenceIndays = diffrenceintime / (1000 * 3500 * 24);
+
+        console.log(new Date(startDate), new Date(endDate))
+
+        hotel.price *= parseInt(differenceIndays)
+
+        console.log(parseInt(differenceIndays))
+        console.log(hotel.price)
+
+        // if (existingUserBooking) {
+        //     existingUserBooking.dates.push(...bookingDates);
+        // } else {
+        //     room.bookedDates.push({
+        //         user: userId,
+        //         dates: bookingDates,
+        //     });
+        // }
 
         const bookingData = new bookingschema(
             {
                 userId: userId,
                 hotelId: room.hotelId,
                 roomId: roomId,
-                checkInDate: startDate,
-                checkOutDate: endDate,
+                checkInDate: CheckinDateUTC,
+                checkOutDate: CheckoutDateUTC,
                 guests: guest,
                 totalPrice: hotel.price
             }
         )
 
 
-        console.log(bookingData)
 
         await bookingData.save()
         await room.save()

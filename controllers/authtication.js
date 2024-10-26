@@ -169,7 +169,6 @@ const userLogin = async (req, res) => {
             maxAge: 3600000 + 86400, 
         })
 
-        console.log(findUser);
 
         res.status(200).json({
             message: "login Success",
