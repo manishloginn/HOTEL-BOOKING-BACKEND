@@ -140,6 +140,7 @@ const userRegistration = async (req, res) => {
 
 const userLogin = async (req, res) => {
     const { email, password } = req.body
+
     try {
         const findUser = await userschema.findOne({ email: email })
         if (!findUser) {
@@ -148,6 +149,7 @@ const userLogin = async (req, res) => {
             })
         }
 
+        console.log(findUser)
         const passwordmatch = findUser.password !== password
 
         if (passwordmatch) {
@@ -171,10 +173,16 @@ const userLogin = async (req, res) => {
 
         // console.log("Cookie set:", token);
 
-        res.status(200).json({
+        
+        res.send({
             message: "login Success",
             token: token
         })
+
+        // res.status(200).json({
+        //     message: "login Success",
+        //     token: token
+        // })
     } catch (error) {
         return res.status(500).json(error)
     }

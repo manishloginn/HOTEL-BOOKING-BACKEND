@@ -6,11 +6,11 @@ const authenticateUser = ( req, res, next ) => {
 
     // console.log(token)
 
-    // if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    //     return res.status(401).json({
-    //         message: 'User not authenticated',
-    //     });
-    // }
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({
+            message: 'User not authenticated',
+        });
+    }
 
     const token = authHeader.split(' ')[1];
 
