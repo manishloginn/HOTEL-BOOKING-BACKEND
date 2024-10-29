@@ -26,7 +26,6 @@ const bookRoom = async (req, res) => {
 
 
 
-    console.log("token", token)
 
     user = JWT.verify(token, process.env.JWT_SECRET)
     req.userId = user.id;
