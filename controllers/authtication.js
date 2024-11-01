@@ -153,13 +153,12 @@ const userLogin = async (req, res) => {
         const passwordmatch = findUser.password !== password
 
         if (passwordmatch) {
-            return res.send({
-                status: 401,
-                message: "password not match"
+            return res.status(401).json({
+                message: "password is incorrect"
             })
         }
         const token = JWT.sign(
-            { id: findUser._id, email: findUser.email, role: findUser.role },
+            { id: findUser._id, user:findUser.username, email: findUser.email, role: findUser.role },
             process.env.JWT_SECRET,
             { expiresIn: '10h' }
         )

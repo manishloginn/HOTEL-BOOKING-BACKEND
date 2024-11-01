@@ -22,8 +22,6 @@ const isRoomAvailable = async (roomId, CheckinDateUTC, CheckoutDateUTC) => {
     if(overLaping.length>0){
         return false
     }
-
-    console.log(overLaping)
     return true
 }
 
