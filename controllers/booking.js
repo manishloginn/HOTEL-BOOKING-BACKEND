@@ -47,7 +47,7 @@ const bookRoom = async (req, res) => {
 
         const isAvailable = await isRoomAvailable(roomId, CheckinDateUTC, CheckoutDateUTC);
 
-        console.log(isRoomAvailable)
+        // console.log(isRoomAvailable)
 
         if (!isAvailable) {
             return res.send({
