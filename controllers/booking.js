@@ -68,21 +68,6 @@ const bookRoom = async (req, res) => {
         }
 
 
-        // let existingUserBooking = room.bookedDates.find(
-        //     (booking) => booking.user.toString() === userId.toString()
-        // );
-
-        // const bookingDates = [];
-
-        // while (currentDate <= end) {
-        //     bookingDates.push(new Date(currentDate));
-        //     currentDate.setDate(currentDate.getDate() + 1);
-        // }
-
-        // // console.log(hotel)
-        // let priceInto = (bookingDates.length) - 1
-
-        // let sum = (startDate + endDate) - 1
 
         let diffrenceintime = checkoutDate.getTime() - checkInDate.getTime();
 
@@ -95,14 +80,6 @@ const bookRoom = async (req, res) => {
         console.log(parseInt(differenceIndays))
         console.log(hotel.price)
 
-        // if (existingUserBooking) {
-        //     existingUserBooking.dates.push(...bookingDates);
-        // } else {
-        //     room.bookedDates.push({
-        //         user: userId,
-        //         dates: bookingDates,
-        //     });
-        // }
 
         const bookingData = new bookingschema(
             {
