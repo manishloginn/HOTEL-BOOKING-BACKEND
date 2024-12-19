@@ -21,8 +21,7 @@ app.use(cookieParser());
 app.use(express.json())
 app.use(cors())
 app.use(cors({
-    origin: 'https://hotel-booking-frontend-red.vercel.app', 
-    // origin: 'http://localhost:3000', 
+    origin: ['https://hotel-booking-frontend-red.vercel.app',  'http://localhost:3000'], 
     credentials: true
 }));
 
