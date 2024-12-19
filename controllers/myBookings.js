@@ -10,7 +10,7 @@ const myBookingController = async (req, res) => {
 
         if (!dbRes || dbRes.length === 0) {
             return res.status(200).json({
-                message: "sNo Bookings Found"
+                message: "No Bookings Found"
             })
         }
         return res.status(200).json({
