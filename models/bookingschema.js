@@ -33,10 +33,14 @@ const bookingschema = new Schema ({
         type:Number,
         required:true
     },
+    order_id: {
+        type:String,
+        required:false
+    },
     status: {
         type: String,
-        enum: ['confirmed', 'canceled', 'completed'],
-        default: "confirmed",
+        enum: ['confirmed', 'canceled', 'completed', 'pending'],
+        default: "pending",
     },
     createdAt: {
         type: Date,

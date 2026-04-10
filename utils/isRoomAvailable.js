@@ -16,7 +16,8 @@ const isRoomAvailable = async (roomId, CheckinDateUTC, CheckoutDateUTC) => {
             {
                 checkOutDate:{$gte:CheckinDateUTC, $lte:CheckoutDateUTC}
             },
-        ],    
+        ],   
+        status: { $in: ['confirmed'] } 
     })
 
     if(overLaping.length>0){
