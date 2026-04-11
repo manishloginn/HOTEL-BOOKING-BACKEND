@@ -1,5 +1,6 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+import mongoose from "mongoose";
+
+const {Schema} = mongoose
 
 const roomschema = new Schema({
     hotelId: {
@@ -26,4 +27,5 @@ const roomschema = new Schema({
 // 
 
 
-module.exports = mongoose.model('rooms', roomschema)
+const Room = mongoose.model('rooms', roomschema)
+export default Room;

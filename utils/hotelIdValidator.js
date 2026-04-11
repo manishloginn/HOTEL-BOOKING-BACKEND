@@ -1,11 +1,13 @@
-
+// utils/hotelIdValidator.js
 
 const hotelIdValidator = (hotelId) => {
-    return new Promise((res, rej) => {
-      if(!hotelId) rej('hotelId is not valid')
-        
-        res('hotelid is valid')
-    })
-}
+    return new Promise((resolve, reject) => {
+        if (!hotelId) {
+            return reject("hotelId is not valid");
+        }
 
-module.exports = hotelIdValidator
+        return resolve("hotelid is valid");
+    });
+};
+
+export default hotelIdValidator;

@@ -1,5 +1,5 @@
-const bookingschema = require("../models/bookingschema")
-
+// const bookingschema = require("../models/bookingschema")
+import bookingModel from "../models/bookingschema.js";
 const mySingleBooking = async (req, res) => {
     const { bookingId } = req.body
 
@@ -28,4 +28,4 @@ const mySingleBooking = async (req, res) => {
     }
 }
 
-module.exports = mySingleBooking
+export default mySingleBooking

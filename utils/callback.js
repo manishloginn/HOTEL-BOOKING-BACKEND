@@ -1,5 +1,4 @@
 import bookingschema from "../models/bookingschema.js";
-import axios from "axios";
 import { getPaymentStatus } from "./paymentstatus.js";
 
 export const callback = async (req, res) => {
@@ -10,6 +9,7 @@ export const callback = async (req, res) => {
       return res.redirect(`${process.env.FRONTEND_URL}/book`);
     }
     const paymentStatus = await getPaymentStatus(Booking.order_id);
+    console.log(paymentStatus, "paymentStatus")
     if (paymentStatus) {
       Booking.status = "confirmed";
       await Booking.save();

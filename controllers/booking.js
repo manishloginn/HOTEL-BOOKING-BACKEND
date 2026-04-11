@@ -1,15 +1,16 @@
-const bookingschema = require("../models/bookingschema");
-const hotelschema = require("../models/hotelschema");
-const roomschema = require("../models/roomschema");
-const { createOrder } = require("../utils/createorder");
-const { bookingpayment } = require("../utils/gateway");
-const { isRoomAvailable } = require("../utils/isRoomAvailable");
-const JWT = require('jsonwebtoken')
+import bookingschema from "../models/bookingschema.js";
+import hotelschema from "../models/hotelschema.js";
+import roomschema from "../models/roomschema.js";
+import { createOrder } from "../utils/createorder.js";
+import { isRoomAvailable } from "../utils/isRoomAvailable.js";
+import JWT from "jsonwebtoken";
 
-const bookRoom = async (req, res) => {
+export const bookRoom = async (req, res) => {
+
 
     const { hotelId, roomId, startDate, endDate, guest } = req.body
     const authHeader = req.headers.authorization;
+    console.log(authHeader, "authHeader")
     let checkInDate = new Date(startDate);
     let checkoutDate = new Date(endDate);
     checkInDate.setHours(11, 0, 0)
@@ -17,7 +18,7 @@ const bookRoom = async (req, res) => {
     const CheckinDateUTC = new Date(checkInDate.getTime() - (checkInDate.getTimezoneOffset()*60000));
     const CheckoutDateUTC = new Date(checkoutDate.getTime() - (checkoutDate.getTimezoneOffset() * 60000))
     const token = authHeader.split(' ')[1];
-    user = JWT.verify(token, process.env.JWT_SECRET)
+    let user = JWT.verify(token, process.env.JWT_SECRET)
     req.userId = user.id;
     const userId = req.userId
     try {
@@ -92,8 +93,3 @@ const bookRoom = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
-
-
-
-
-module.exports = { bookRoom }

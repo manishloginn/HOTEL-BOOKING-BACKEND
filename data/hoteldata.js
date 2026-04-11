@@ -361,5 +361,4 @@ const hoteldata = [
   }
 ]
 
-
-  module.exports= hoteldata
+export default hoteldata;

@@ -1,37 +1,37 @@
-const express = require('express')
-const app = express()
-require('dotenv').config()
-require('./connection/MongoDbConnection')
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
+import express from "express";
+import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+import cors from "cors";
 
+import connectDB from "./connection/MongoDbConnection.js";
+import Auth from "./routes/router.js";
 
+dotenv.config();
 
+const app = express();
 
-const Auth = require('./routes/router')
+const PORT = process.env.PORT || 5000;
+const MODE = process.env.NODE_ENV || "production";
 
-
-
-const PORT = process.env.PORT
-const MODE = process.env.NODE_ENV || "production"
-
+// middleware
 app.use(cookieParser());
+app.use(express.json());
 
-
-app.use(express.json())
-app.use(cors())
 app.use(cors({
-    origin: ['https://hotel-booking-frontend-red.vercel.app',  'http://localhost:3000'], 
-    credentials: true
+  origin: [
+    "https://hotel-booking-frontend-red.vercel.app",
+    "http://localhost:3000"
+  ],
+  credentials: true
 }));
 
+// DB connect
+connectDB();
 
-app.use('/', Auth)
+// routes
+app.use("/", Auth);
 
-
-
-
-
+// server
 app.listen(PORT, () => {
-    console.log(`server is running on ${PORT} in ${MODE} mode `)
-})
+  console.log(`server is running on ${PORT} in ${MODE} mode`);
+});

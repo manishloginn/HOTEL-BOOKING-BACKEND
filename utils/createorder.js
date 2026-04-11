@@ -10,7 +10,7 @@ export const createOrder = async (bookingid, price) => {
         currency: 'INR',
         receipt: bookingid.toString(),
       };
- 
+
       const config = {
         method: 'post',
         maxBodyLength: Infinity,
@@ -24,6 +24,7 @@ export const createOrder = async (bookingid, price) => {
       };
 
       const { data: rpRes } = await axios.request(config);
+      console.log(rpRes, "rpRes")
       if (rpRes.status !== 'created') {
         throw new Error('Failed to create Razorpay order');
       }

@@ -1,4 +1,5 @@
-import axios from "axios";
+// const axios = require("axios");
+import axios  from "axios";
 
 export const getPaymentStatus = async (order_id) => {
   try {

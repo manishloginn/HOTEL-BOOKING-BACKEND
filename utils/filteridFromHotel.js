@@ -1,47 +1,32 @@
-const { default: mongoose, Mongoose } = require("mongoose");
-const roomschema = require("../models/roomschema");
+// utils/filteridFromHotel.js
 
+import roomschema from "../models/roomschema.js";
 
 const makingroomdata = (hotelFound, roomdata) => {
-   // console.log("hittt")
+    const resultData = [];
+    let roomsIndex = 0;
 
-   const uniqueIds = new Set(hotelFound.map((hotelid) => hotelid._id.toString()))
-   const filterhotelId = Array.from(uniqueIds).map(id => ({ hotelId: id }))
-   let roomsIndex = 0;
-   const resultData = []; 
+    for (let i = 0; i < hotelFound.length; i++) {
+        for (let j = 0; j < 4; j++) {
 
-   for (let i = 0; i < filterhotelId.length; i++) {
-      for (let j = 1; j <=4 ; j++) {
-         if(roomsIndex < roomdata.length){
+            if (roomsIndex >= roomdata.length) break;
+
             const room = roomdata[roomsIndex];
+
             const data = new roomschema({
-               hotelId: filterhotelId[i].hotelId.toString(),
-               roomtype: room.roomtype,
-               // price: room.price,
-               availability: room.availability,
-               capacity: room.capacity,
-               amenities: room.amenities,
-               // bookedDates:[
-               //    {
-               //       user:'',
-               //       dates:[]
-               //    }
-               // ],
-               // bookedDates:[],
+                hotelId: hotelFound[i]._id.toString(),
+                roomtype: room.roomtype,
+                availability: room.availability,
+                capacity: room.capacity,
+                amenities: room.amenities,
             });
+
             resultData.push(data);
-            // console.log(data);
             roomsIndex++;
-         } else {
-            break;
-         }
-      }
+        }
+    }
 
-   }
-   return resultData
+    return resultData;
+};
 
-
-}
-
-
-module.exports = makingroomdata
+export default makingroomdata;

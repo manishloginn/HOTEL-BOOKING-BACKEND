@@ -1,34 +1,63 @@
-const express = require('express')
-const { userRegistration, userLogin, roomAdd, hotelRegistration, adminLogin } = require('../controllers/authtication')
-const insertData = require('../controllers/addDatatodb')
-const { bookRoom } = require('../controllers/booking')
-const authenticateUser = require('../utils/authenticateUser')
-const { fetchHotel, selectHotel, fetchRoomInHotel } = require('../controllers/fetchHotem')
-const adminAuthenticate = require('../utils/adminAuthenticate')
-const router = express.Router()
-const myBookingController = require("./../controllers/myBookings")
-const mySingleBooking = require('../controllers/mySingleBooking')
-const { rzpCallback } = require('../utils/razorpaycallback')
-const { bookingpayment } = require('../utils/gateway')
-const { callback } = require('../utils/callback')
+import express from "express";
+
+import {
+  userRegistration,
+  userLogin,
+  roomAdd,
+  hotelRegistration,
+  adminLogin
+} from "../controllers/authtication.js";
+
+import insertData from "../controllers/addDatatodb.js";
+import  {bookRoom}  from "../controllers/booking.js";
+
+import authenticateUser from "../utils/authenticateUser.js";
+import adminAuthenticate from "../utils/adminAuthenticate.js";
+
+import {
+  fetchHotel,
+  selectHotel,
+  fetchRoomInHotel
+} from "../controllers/fetchHotem.js";
+
+import myBookingController from "../controllers/myBookings.js";
+import mySingleBooking from "../controllers/mySingleBooking.js";
+
+import { rzpCallback } from "../utils/razorpaycallback.js";
+import { bookingpayment } from "../utils/gateway.js";
+import { callback } from "../utils/callback.js";
+
+const router = express.Router();
 
 
-router.post('/insertData', insertData)
-router.post('/userRegister', userRegistration)
-router.post('/userLogin', userLogin)
-router.post('/adminRegistration', hotelRegistration)
-router.post('/adminLogin', adminLogin)
-router.post('/roomadd', adminAuthenticate, roomAdd)//add room with middlewear check its room admin or not
-router.get('/hotelData', fetchHotel) //fetch hotels
-router.post('/hotelselect', selectHotel) // select hotel for booking
-router.post('/hotelRooms', fetchRoomInHotel)
-router.post('/razorpay-nonseamless/callback', rzpCallback)
-router.get('/redirect/pg', bookingpayment)
-router.post('/bookRoom', authenticateUser, bookRoom) // select room inside selected hotel and book room
-router.get("/myBookings", authenticateUser, myBookingController)
-router.post("/mySingleBooking", authenticateUser, mySingleBooking)
-router.post("/callback",  callback)
-router.get("/callback",  callback)
+// ================= BASIC =================
+router.post("/insertData", insertData);
 
+// ================= USER =================
+router.post("/userRegister", userRegistration);
+router.post("/userLogin", userLogin);
 
-module.exports = router
+// ================= ADMIN =================
+router.post("/adminRegistration", hotelRegistration);
+router.post("/adminLogin", adminLogin);
+
+// ================= ROOM =================
+router.post("/roomadd", adminAuthenticate, roomAdd);
+
+// ================= HOTEL =================
+router.get("/hotelData", fetchHotel);
+router.post("/hotelselect", selectHotel);
+router.post("/hotelRooms", fetchRoomInHotel);
+
+// ================= PAYMENT =================
+router.post("/razorpay-nonseamless/callback", rzpCallback);
+router.get("/redirect/pg", bookingpayment);
+router.post("/callback", callback);
+router.get("/callback", callback);
+
+// ================= BOOKING =================
+router.post("/bookRoom", authenticateUser, bookRoom);
+router.get("/myBookings", authenticateUser, myBookingController);
+router.post("/mySingleBooking", authenticateUser, mySingleBooking);
+
+export default router;

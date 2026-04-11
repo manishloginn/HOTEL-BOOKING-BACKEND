@@ -626,4 +626,4 @@ const roomdata = [
 ]
 
 
-module.exports = roomdata
+export default roomdata

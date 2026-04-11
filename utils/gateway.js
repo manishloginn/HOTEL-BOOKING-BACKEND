@@ -1,13 +1,13 @@
-import bookingschema from "../models/bookingschema.js";
+import Booking from "../models/bookingschema.js";
 
 export const bookingpayment = async (req, res) => {
   try {
     const bookingId = req.query.collect_id;
     const amount = req.query.amount;
     const collect_id = bookingId;
-    const Booking = await bookingschema.findById(bookingId)
-    if(!Booking){
-        throw new Error("booking not found")
+    const booking = await Booking.findById(bookingId);
+    if (!booking) {
+      throw new Error("booking not found");
     }
      const options = {
         key: process.env.RAZORPAY_KEY_ID,
@@ -15,7 +15,7 @@ export const bookingpayment = async (req, res) => {
         currency: 'INR',
         // name: additional_data?.student_details?.student_name || 'Fees Payment',
         description: 'Fees Payment',
-        order_id: Booking.order_id,
+        order_id: booking.order_id,
         callback_url: `${process.env.URL}/callback?collect_id=${collect_id}`,
         handler: function (response) {
           console.log('Payment successful:', response);

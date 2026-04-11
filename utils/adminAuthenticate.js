@@ -1,36 +1,31 @@
-const JWT = require('jsonwebtoken')
+import JWT from "jsonwebtoken";
 
 const adminAuthenticate = (req, res, next) => {
+    const authHeader = req.headers.authorization;
 
-    const token = req.cookies.adminToken
-
-    // console.log(token)
-
-    if(!token){
-        return res.send({
-            status:401,
-            message: 'Admin not authenticated'
-        })
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+        return res.status(401).json({ message: "Unauthorized" });
     }
+
+    const token = authHeader.split(" ")[1];
 
     try {
-        const verify = JWT.verify(token, process.env.JWT_SECRET)
+        const decoded = JWT.verify(token, process.env.JWT_SECRET);
 
-        // console.log(verify)
+        if (decoded.role !== "admin") {
+            return res.status(403).json({
+                message: "Access denied. Admin only"
+            });
+        }
 
-        req.adminUser = verify
+        req.user = decoded;
+        next();
 
-        next()
-
-
-    } catch (error) {
-        return res.status(403).json({ message: 'Invalid or expired token' });
-        
+    } catch (err) {
+        return res.status(403).json({
+            message: "Invalid or expired token"
+        });
     }
+};
 
-
-
-
-}
-
-module.exports = adminAuthenticate
+export default adminAuthenticate;

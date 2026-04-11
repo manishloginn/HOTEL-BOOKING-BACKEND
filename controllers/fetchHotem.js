@@ -1,104 +1,101 @@
-const hotelschema = require("../models/hotelschema")
-const roomschema = require("../models/roomschema")
-const hotelIdValidator = require("../utils/hotelIdValidator")
+import hotelschema from "../models/hotelschema.js";
+import roomschema from "../models/roomschema.js";
+import hotelIdValidator from "../utils/hotelIdValidator.js";
 
-const fetchHotel = async (req, res) => {
+// ================= FETCH ALL HOTELS =================
+export const fetchHotel = async (req, res) => {
     try {
-        const hotelData = await hotelschema.find()
-        if (!hotelData) {
-            return res.send({
-                status: 204,
-                message: "no hotel found"
-            })
+        const hotelData = await hotelschema.find();
+
+        if (hotelData.length === 0) {
+            return res.status(404).json({
+                message: "No hotels found"
+            });
         }
-        res.send({
-            status: 200,
-            message: 'hotel fetch successfully',
+
+        return res.status(200).json({
+            message: "Hotels fetched successfully",
             data: hotelData
-        })
+        });
 
     } catch (error) {
-        res.status(500).json({
-            status: 500,
-            message: "An error occurred while fetching the hotels",
-            error: error.message
+        return res.status(500).json({
+            message: error.message
         });
     }
-}
+};
 
 
-const selectHotel = async (req, res) => {
-    const { hotelId } = req.body
+// ================= SELECT HOTEL =================
+export const selectHotel = async (req, res) => {
+    const { hotelId } = req.body;
 
-    if(!hotelId){
-       return res.send({
-            status:400,
-            message:"hotelId not found"
-        })
+    if (!hotelId) {
+        return res.status(400).json({
+            message: "hotelId not found"
+        });
     }
 
     try {
-        hotelIdValidator(hotelId)
-        const findhotel = await roomschema.find({ hotelId: hotelId })
-        const hotelSearch = await hotelschema.findById({_id:hotelId})
+        hotelIdValidator(hotelId);
 
-        // console.log(hotelSearch)
-        if (!findhotel) {
-            return res.send({
-                status: 500,
-                message: "hotel not found"
-            })
+        const findhotel = await roomschema.find({ hotelId });
+
+        const hotelSearch = await hotelschema.findById(hotelId);
+
+        if (!hotelSearch) {
+            return res.status(404).json({
+                message: "Hotel not found"
+            });
         }
 
-        res.send({
-            status: 201,
-            message: "please select room",
+        if (findhotel.length === 0) {
+            return res.status(404).json({
+                message: "No rooms found"
+            });
+        }
+
+        return res.status(200).json({
+            message: "Please select room",
             data: findhotel,
-            hotelDetail:hotelSearch
-        })
+            hotelDetail: hotelSearch
+        });
 
     } catch (error) {
-        res.send({
-            message:error
-        })
+        return res.status(500).json({
+            message: error.message
+        });
     }
+};
 
 
-}
+// ================= FETCH ROOMS =================
+export const fetchRoomInHotel = async (req, res) => {
+    const { hotelId } = req.body;
 
-
-const fetchRoomInHotel = async (req, res) => {
-    const {hotelId} = req.body;
-    // console.log(hotelId)
-
-    if(!hotelId){
-        return res.send({
-            status:401,
-            message:"Plesase select valid hotel"
-        })
+    if (!hotelId) {
+        return res.status(400).json({
+            message: "Please select valid hotel"
+        });
     }
 
     try {
-        const result = await roomschema.find({hotelId:hotelId})
-        if(!result) {
-            return res.send({
-                status:500,
-                message:"No Rooms Available"
-            })
+        const result = await roomschema.find({ hotelId });
+
+        if (result.length === 0) {
+            return res.status(404).json({
+                message: "No rooms available"
+            });
         }
-        // console.log(result)
-        
 
-        res.send({
-            status:200,
-            message:"Rooms Fetch",
-            data:result
-        })
+        return res.status(200).json({
+            message: "Rooms fetched successfully",
+            data: result
+        });
 
-        
     } catch (error) {
-        console.log("Error", error)
+        return res.status(500).json({
+            message: error.message
+        });
     }
-
-}
-module.exports = { fetchHotel, selectHotel, fetchRoomInHotel }
+};
