@@ -3,6 +3,7 @@ import JWT from "jsonwebtoken"
 const authenticateUser = (req, res, next) => {
     const token = req?.headers["authorization"]?.slice(8);
     
+    console.log(token, "token")
     if (!token) {
         return res.status(400).json({
             message: 'User not authenticated'

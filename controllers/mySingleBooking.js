@@ -10,7 +10,7 @@ const mySingleBooking = async (req, res) => {
     }
 
     try {
-        const bookingRes = await bookingschema.findOne({ _id: bookingId })
+        const bookingRes = await bookingModel.findOne({ _id: bookingId })
             .populate("hotelId")
             .populate("roomId")
             .populate("userId")
