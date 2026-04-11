@@ -29,6 +29,10 @@ import { callback } from "../utils/callback.js";
 
 const router = express.Router();
 
+router.get('/', (req, res) => {
+  res.send("running");
+});
+
 
 // ================= BASIC =================
 router.post("/insertData", insertData);
